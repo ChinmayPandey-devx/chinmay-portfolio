@@ -14,7 +14,7 @@ const projects = [
     category: "PRDs",
     summary: "AI Career Guidance Platform",
     skills: ["0→1 Product", "Roadmapping", "Feature Prioritization"],
-    link: "#",
+    link: "https://ed-pilot.vercel.app/",
     thumbnail: "assets/edpilot.png"
   },
   {
