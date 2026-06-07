@@ -19,21 +19,102 @@ const projects = [
   },
   {
     id: 3,
-    title: "Product Teardowns",
-    category: "Product Teardowns",
-    summary: "In-depth analysis of successful products",
-    skills: ["Product Strategy", "Analysis", "Frameworks"],
+    title: "Netflix Product Design",
+    category: "Product Design",
+    summary: "Product design case study for Netflix",
+    skills: ["User Experience", "Wireframing"],
+    link: "#",
+    thumbnail: "assets/design.png"
+  },
+  {
+    id: 4,
+    title: "Uber Product Design",
+    category: "Product Design",
+    summary: "Product design case study for Uber",
+    skills: ["User Experience", "Wireframing"],
+    link: "#",
+    thumbnail: "assets/design.png"
+  },
+  {
+    id: 5,
+    title: "Media.net Guesstimate",
+    category: "Guesstimates",
+    summary: "Market sizing and estimation",
+    skills: ["Analytical Thinking", "Market Sizing"],
     link: "#",
     thumbnail: "assets/teardowns.png"
   },
   {
-    id: 4,
-    title: "Product Design Cases",
-    category: "Product Design",
-    summary: "Comprehensive design case studies",
-    skills: ["Figma", "User Research", "Agile"],
+    id: 6,
+    title: "Netflix Guesstimate",
+    category: "Guesstimates",
+    summary: "Market sizing and estimation",
+    skills: ["Analytical Thinking", "Market Sizing"],
     link: "#",
-    thumbnail: "assets/design.png"
+    thumbnail: "assets/teardowns.png"
+  },
+  {
+    id: 7,
+    title: "Swiggy Guesstimate",
+    category: "Guesstimates",
+    summary: "Market sizing and estimation",
+    skills: ["Analytical Thinking", "Market Sizing"],
+    link: "#",
+    thumbnail: "assets/teardowns.png"
+  },
+  {
+    id: 8,
+    title: "Zomato Guesstimate",
+    category: "Guesstimates",
+    summary: "Market sizing and estimation",
+    skills: ["Analytical Thinking", "Market Sizing"],
+    link: "#",
+    thumbnail: "assets/teardowns.png"
+  },
+  {
+    id: 9,
+    title: "Amazon RCA",
+    category: "RCAs",
+    summary: "Root Cause Analysis",
+    skills: ["Problem Solving", "Data Analysis"],
+    link: "#",
+    thumbnail: "assets/teardowns.png"
+  },
+  {
+    id: 10,
+    title: "Google RCA",
+    category: "RCAs",
+    summary: "Root Cause Analysis",
+    skills: ["Problem Solving", "Data Analysis"],
+    link: "#",
+    thumbnail: "assets/teardowns.png"
+  },
+  {
+    id: 11,
+    title: "Uber RCA",
+    category: "RCAs",
+    summary: "Root Cause Analysis",
+    skills: ["Problem Solving", "Data Analysis"],
+    link: "#",
+    thumbnail: "assets/teardowns.png"
+  },
+  {
+    id: 12,
+    title: "YouTube RCA",
+    category: "RCAs",
+    summary: "Root Cause Analysis",
+    skills: ["Problem Solving", "Data Analysis"],
+    link: "#",
+    thumbnail: "assets/teardowns.png"
+  },
+  {
+    id: 13,
+    title: "Sprinklr GTM",
+    category: "Growth Experiments",
+    summary: "Go-To-Market strategy document",
+    skills: ["GTM", "Product Strategy", "Analysis"],
+    link: "#",
+    thumbnail: "assets/teardowns.png"
   }
 ];
 
