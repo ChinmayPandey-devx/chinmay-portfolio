@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chinmay Pandey | Product Builder</title>
+    <meta name="description" content="Portfolio of Chinmay Pandey, Product Builder & Product Management Intern building AI products and solving user problems.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">CP.</a>
+            <div class="nav-links">
+                <a href="#work">Work</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#experience">Experience</a>
+                <a href="#about">About</a>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- Hero Section -->
+        <section id="hero" class="hero">
+            <div class="hero-content fade-in-up">
+                <p class="hero-label">Chinmay Pandey • Product Management Intern</p>
+                <h1 class="hero-title">Building AI Products,<br>Solving User Problems,<br>Driving Product Decisions.</h1>
+                <p class="hero-subtitle">Product Management Intern with experience in 0→1 product development, user research, feature prioritization, stakeholder management, AI products, and cross-functional leadership.</p>
+                <div class="hero-actions">
+                    <a href="#portfolio" class="btn btn-primary">View Portfolio</a>
+                    <a href="#" class="btn btn-secondary">Download Resume</a>
+                </div>
+                <div class="hero-metrics">
+                    <div class="metric">
+                        <span class="metric-value">15+</span>
+                        <span class="metric-label">User Interviews</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-value">2</span>
+                        <span class="metric-label">AI Products Built</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-value">4</span>
+                        <span class="metric-label">Product & Leadership Experiences</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-value">20+</span>
+                        <span class="metric-label">Product Case Studies</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image-wrapper fade-in-up delay-200">
+                <img src="assets/hero.png" alt="Chinmay Pandey" class="hero-image">
+            </div>
+        </section>
+
+        <!-- Featured Work Section -->
+        <section id="work" class="section fade-in-up delay-300">
+            <div class="section-header">
+                <h2>Featured Work</h2>
+            </div>
+            <div class="featured-grid" id="featured-container">
+                <!-- Injected via JS -->
+            </div>
+        </section>
+
+        <!-- Product Portfolio -->
+        <section id="portfolio" class="section fade-in-up">
+            <div class="section-header">
+                <h2>Product Portfolio</h2>
+            </div>
+            <div class="portfolio-controls">
+                <input type="text" id="search-input" class="search-input" placeholder="Search case studies...">
+                <div class="filter-tabs" id="filter-tabs">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="Product Teardowns">Product Teardowns</button>
+                    <button class="filter-btn" data-filter="Product Design">Product Design</button>
+                    <button class="filter-btn" data-filter="PRDs">PRDs</button>
+                    <button class="filter-btn" data-filter="RCSs">RCSs</button>
+                    <button class="filter-btn" data-filter="Guesstimates">Guesstimates</button>
+                    <button class="filter-btn" data-filter="Growth Experiments">Growth Experiments</button>
+                </div>
+            </div>
+            <div class="portfolio-list" id="portfolio-list">
+                <!-- Injected via JS -->
+            </div>
+        </section>
+
+        <!-- Experience Timeline -->
+        <section id="experience" class="section fade-in-up">
+            <div class="section-header">
+                <h2>Experience</h2>
+            </div>
+            <div class="timeline" id="timeline-container">
+                <!-- Injected via JS -->
+            </div>
+        </section>
+
+        <div class="grid-layout-2 fade-in-up">
+            <!-- About Section -->
+            <section id="about" class="section">
+                <div class="section-header">
+                    <h2>About Me</h2>
+                </div>
+                <div class="about-content">
+                    <p>My transition from engineering to product was driven by an intense curiosity about <strong>why</strong> we build certain features over others, and <strong>how</strong> those decisions impact users. Engineering taught me how to build; product management taught me what to build.</p>
+                    <p>I thrive in the intersection of business, technology, and user experience. Over the past few years, I've had the opportunity to work closely with founders, helping them navigate the messy 0→1 phase of building AI products from the ground up.</p>
+                    <p>My strength lies in finding clarity amidst ambiguity, aligning cross-functional teams, and shipping products that genuinely solve user problems.</p>
+                </div>
+            </section>
+
+            <!-- Skills & Certifications -->
+            <div class="skills-certifications">
+                <section id="skills" class="section-mini">
+                    <div class="section-header-mini">
+                        <h3>Skills</h3>
+                    </div>
+                    <div class="skills-container" id="skills-container">
+                        <!-- Injected via JS -->
+                    </div>
+                </section>
+
+                <section id="certifications" class="section-mini">
+                    <div class="section-header-mini">
+                        <h3>Certifications</h3>
+                    </div>
+                    <div class="certifications-list" id="certifications-container">
+                        <!-- Injected via JS -->
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section contact-section fade-in-up">
+            <div class="contact-card">
+                <h2>Let's build something great.</h2>
+                <p>Looking for new opportunities in Product Management.</p>
+                <div class="contact-links">
+                    <a href="mailto:hello@example.com" class="contact-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        Email
+                    </a>
+                    <a href="#" class="contact-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        LinkedIn
+                    </a>
+                    <a href="#" class="contact-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                        GitHub
+                    </a>
+                    <a href="#" class="contact-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                        Resume
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 Chinmay Pandey.</p>
+            <div class="footer-links">
+                <a href="#work">Work</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#experience">Experience</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
