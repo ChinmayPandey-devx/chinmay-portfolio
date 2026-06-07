@@ -99,14 +99,14 @@
                 }
                 
                 // Format text into HTML
-                const formattedHtml = contentText.split('\\n\\n').map(p => {
+                const formattedHtml = contentText.split('\n\n').map(p => {
                     p = p.trim();
                     if (p.length === 0) return '';
                     // bold short lines
                     if (p.length < 80 && !p.includes('.')) {
-                        return '<h3>' + p.replace(/\\n/g, '<br>') + '</h3>';
+                        return '<h3>' + p.replace(/\n/g, '<br>') + '</h3>';
                     }
-                    return '<p>' + p.replace(/\\n/g, '<br>') + '</p>';
+                    return '<p>' + p.replace(/\n/g, '<br>') + '</p>';
                 }).join('');
                 
                 document.getElementById('case-body').innerHTML = formattedHtml;
