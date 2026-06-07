@@ -23,7 +23,7 @@ const projects = [
     category: "Product Design",
     summary: "Product design case study for Netflix",
     skills: ["User Experience", "Wireframing"],
-    link: "#",
+    link: "https://drive.google.com/file/d/12ml8mxIder7qVk-ytRj7J8x_Kr6pqsEt/view",
     thumbnail: "assets/design.png"
   },
   {
@@ -32,7 +32,7 @@ const projects = [
     category: "Product Design",
     summary: "Product design case study for Uber",
     skills: ["User Experience", "Wireframing"],
-    link: "#",
+    link: "https://drive.google.com/file/d/1jLgrPYTyfau9fqy-GmzUR_sP0xsLPk4x/view",
     thumbnail: "assets/design.png"
   },
   {
@@ -41,7 +41,7 @@ const projects = [
     category: "Guesstimates",
     summary: "Market sizing and estimation",
     skills: ["Analytical Thinking", "Market Sizing"],
-    link: "#",
+    link: "https://drive.google.com/file/d/18YPMIC5KCek1etLXCghcSxihdRxVq1FH/view",
     thumbnail: "assets/teardowns.png"
   },
   {
@@ -50,7 +50,7 @@ const projects = [
     category: "Guesstimates",
     summary: "Market sizing and estimation",
     skills: ["Analytical Thinking", "Market Sizing"],
-    link: "#",
+    link: "https://drive.google.com/file/d/1SdmHl_KMgNtaveScpnUBGFe2EHB4wUST/view",
     thumbnail: "assets/teardowns.png"
   },
   {
@@ -59,7 +59,7 @@ const projects = [
     category: "Guesstimates",
     summary: "Market sizing and estimation",
     skills: ["Analytical Thinking", "Market Sizing"],
-    link: "#",
+    link: "https://drive.google.com/file/d/1kBHJuhbUctisDKABpnsC12T3xoAcci9M/view",
     thumbnail: "assets/teardowns.png"
   },
   {
@@ -68,7 +68,7 @@ const projects = [
     category: "Guesstimates",
     summary: "Market sizing and estimation",
     skills: ["Analytical Thinking", "Market Sizing"],
-    link: "#",
+    link: "https://drive.google.com/file/d/1woSole0arVZYpdNPd159Jhx6YtrWhVqV/view",
     thumbnail: "assets/teardowns.png"
   },
   {
@@ -77,7 +77,7 @@ const projects = [
     category: "RCAs",
     summary: "Root Cause Analysis",
     skills: ["Problem Solving", "Data Analysis"],
-    link: "#",
+    link: "https://drive.google.com/file/d/1u3Nkaha8MoJvzlQzBzuzPIPcUeJDvfBk/view",
     thumbnail: "assets/teardowns.png"
   },
   {
@@ -86,7 +86,7 @@ const projects = [
     category: "RCAs",
     summary: "Root Cause Analysis",
     skills: ["Problem Solving", "Data Analysis"],
-    link: "#",
+    link: "https://drive.google.com/file/d/11Ng3NVOVsLxbWOufi3A7DkOg-UIP9PPR/view",
     thumbnail: "assets/teardowns.png"
   },
   {
@@ -95,7 +95,7 @@ const projects = [
     category: "RCAs",
     summary: "Root Cause Analysis",
     skills: ["Problem Solving", "Data Analysis"],
-    link: "#",
+    link: "https://drive.google.com/file/d/1Rl8iv5m8XIQQH-QrWsVBKaGwEi-0LJaV/view",
     thumbnail: "assets/teardowns.png"
   },
   {
@@ -104,7 +104,7 @@ const projects = [
     category: "RCAs",
     summary: "Root Cause Analysis",
     skills: ["Problem Solving", "Data Analysis"],
-    link: "#",
+    link: "https://drive.google.com/file/d/1oKCiD0K97F9w3mLlBgP7IWnOV_xRIxoV/view",
     thumbnail: "assets/teardowns.png"
   },
   {
@@ -113,7 +113,7 @@ const projects = [
     category: "Growth Experiments",
     summary: "Go-To-Market strategy document",
     skills: ["GTM", "Product Strategy", "Analysis"],
-    link: "#",
+    link: "https://drive.google.com/file/d/1V-evdSXp2RNaoyP15ukSWNbdXN7nQWVy/view",
     thumbnail: "assets/teardowns.png"
   }
 ];
