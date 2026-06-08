@@ -225,94 +225,265 @@
             </div>
 
             <div class="grid" id="portfolio-grid">
-                
-                <!-- 1. RCA Card -->
-                <div class="card portfolio-item" data-category="RCAs">
-                    <div class="card-thumb"><span class="card-icon">🔍</span></div>
+                <!-- 1. Netflix Product Design -->
+                <div class="card portfolio-item fade-in" data-category="Product Design">
+                    <div class="card-thumb"><span class="card-icon">📺</span></div>
+                    <div class="card-content">
+                        <span class="card-badge">Product Design</span>
+                        <h3 class="card-title">Netflix Senior UX Redesign</h3>
+                        <p class="card-desc">Designing an accessible streaming interface focused on voice navigation and contrast for users 60+.</p>
+                        
+                        <details class="artifact-view">
+                            <summary>View Design Analysis</summary>
+                            <div class="artifact-content">
+                                <div class="mockup-placeholder">
+                                    <span>📱 Figma link coming soon</span>
+                                </div>
+                                <div style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-muted);">
+                                    <strong>Design Rationale:</strong> The new layout relies on high-contrast cards, voice-first navigation ("Search Dilwale Dulhaniya Le Jayenge"), and immediate OTP-based login. This directly addresses the pain points of weak eyesight and complex sign-up flows for elderly users.
+                                </div>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <!-- 2. Uber Product Design -->
+                <div class="card portfolio-item fade-in" data-category="Product Design">
+                    <div class="card-thumb"><span class="card-icon">🚖</span></div>
+                    <div class="card-content">
+                        <span class="card-badge">Product Design</span>
+                        <h3 class="card-title">Uber Accessibility Mode</h3>
+                        <p class="card-desc">End-to-end booking flow and vehicle matching for users with physical and visual disabilities.</p>
+                        
+                        <details class="artifact-view">
+                            <summary>View Mockups</summary>
+                            <div class="artifact-content">
+                                <div class="mockup-placeholder">
+                                    <span>📱 Figma link coming soon</span>
+                                </div>
+                                <div style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-muted);">
+                                    <strong>Design Rationale:</strong> Implemented voice-enabled booking, caregiver mode for secondary users, and high-contrast UI. This tackles the primary blocker of app navigation for visually impaired users.
+                                </div>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <!-- 3. Amazon RCA -->
+                <div class="card portfolio-item fade-in" data-category="RCAs">
+                    <div class="card-thumb"><span class="card-icon">📦</span></div>
                     <div class="card-content">
                         <span class="card-badge">RCAs</span>
-                        <!-- [REPLACE_ME] Replace with real RCA Title -->
-                        <h3 class="card-title">Uber Rider Drop-off RCA</h3>
-                        <p class="card-desc">Investigating a 15% drop in completed rides using a 5-Why root cause framework.</p>
+                        <h3 class="card-title">Amazon Prime Retention Drop</h3>
+                        <p class="card-desc">Investigating a gradual 5% decline in user retention (4/7-day) on Prime Video.</p>
                         
                         <details class="artifact-view">
                             <summary>View Causal Diagram</summary>
                             <div class="artifact-content">
                                 <div class="why-ladder">
-                                    <div class="why-step">Riders are canceling trips after matching.</div>
-                                    <div class="why-step">Wait times are exceeding 12 minutes in urban areas.</div>
-                                    <div class="why-step">Driver supply has dropped significantly during peak hours.</div>
-                                    <div class="root-cause">Root Cause: New incentive structure disincentivizes short, high-traffic trips.</div>
+                                    <div class="why-step">Drop in 4-day and 7-day user retention on Amazon Prime.</div>
+                                    <div class="why-step">Users are searching for movies but dropping off after viewing search results.</div>
+                                    <div class="why-step">The movies they searched for were marked with a "Rent" label.</div>
+                                    <div class="why-step">Users did not want to pay extra for movies when they already pay for a Prime subscription.</div>
+                                    <div class="root-cause">Root Cause: The introduction of the new rental business model alienated existing Prime subscribers.</div>
                                 </div>
                                 <div class="fix-shipped">
-                                    <strong>Fix Shipped:</strong> Adjusted surge pricing algorithm to guarantee minimum trip earnings, recovering supply by 12%.
+                                    <strong>Recommendation Shipped:</strong> Adjust UI to clearly separate Prime-included content from Rental content, preventing bait-and-switch frustration. Expected to recover retention by 3.5%.
                                 </div>
                             </div>
                         </details>
                     </div>
                 </div>
 
-                <!-- 2. Product Design Card -->
-                <div class="card portfolio-item" data-category="Product Design">
-                    <div class="card-thumb"><span class="card-icon">✨</span></div>
+                <!-- 4. YouTube RCA -->
+                <div class="card portfolio-item fade-in" data-category="RCAs">
+                    <div class="card-thumb"><span class="card-icon">▶️</span></div>
                     <div class="card-content">
-                        <span class="card-badge">Product Design</span>
-                        <!-- [REPLACE_ME] Replace with real Product Design Title -->
-                        <h3 class="card-title">Netflix Senior UX Redesign</h3>
-                        <p class="card-desc">Designing an accessible streaming interface focused on voice navigation and contrast.</p>
+                        <span class="card-badge">RCAs</span>
+                        <h3 class="card-title">YouTube Watch Time Drop</h3>
+                        <p class="card-desc">Diagnosing a 20% drop in Average View Duration for videos longer than 5 minutes.</p>
                         
                         <details class="artifact-view">
-                            <summary>View Wireframes</summary>
+                            <summary>View Causal Diagram</summary>
                             <div class="artifact-content">
-                                <!-- [REPLACE_ME] Replace this placeholder div with an <img> tag pointing to actual screenshots -->
-                                <div class="mockup-placeholder">
-                                    <span>📱 Figma link & screenshots coming soon</span>
+                                <div class="why-ladder">
+                                    <div class="why-step">20% drop in Average View Duration globally across all platforms.</div>
+                                    <div class="why-step">Users are selecting long-form videos less frequently and exiting them earlier.</div>
+                                    <div class="why-step">A new feature, YouTube Shorts, was recently launched globally.</div>
+                                    <div class="why-step">Shorts consumption changed user intent, fragmenting attention and reducing patience for long intros.</div>
+                                    <div class="root-cause">Root Cause: The launch of Shorts shifted core consumption behavior, cannibalizing attention span for long-form content.</div>
+                                </div>
+                                <div class="fix-shipped">
+                                    <strong>Impact:</strong> Watch time drop is an expected cannibalization side-effect of algorithmic shifts toward short-form engagement.
                                 </div>
                             </div>
                         </details>
                     </div>
                 </div>
 
-                <!-- 3. Guesstimate Card -->
-                <div class="card portfolio-item" data-category="Guesstimates">
-                    <div class="card-thumb"><span class="card-icon">📊</span></div>
+                <!-- 5. Uber RCA -->
+                <div class="card portfolio-item fade-in" data-category="RCAs">
+                    <div class="card-thumb"><span class="card-icon">🚗</span></div>
+                    <div class="card-content">
+                        <span class="card-badge">RCAs</span>
+                        <h3 class="card-title">Uber Cancellations Surge</h3>
+                        <p class="card-desc">Analyzing a 5% increase in user cancellations post-booking for Uber Go in India.</p>
+                        
+                        <details class="artifact-view">
+                            <summary>View Causal Diagram</summary>
+                            <div class="artifact-content">
+                                <div class="why-ladder">
+                                    <div class="why-step">User cancellations for Uber Go increased by 5% gradually over 3 months.</div>
+                                    <div class="why-step">Cancellations occur after the ride is booked and after the user speaks to the driver.</div>
+                                    <div class="why-step">Drivers are calling users to negotiate ride terms.</div>
+                                    <div class="why-step">Drivers are asking users to pay extra for tolls or take the ride offline to avoid commission.</div>
+                                    <div class="root-cause">Root Cause: Drivers are dissatisfied with fare margins and toll handling, pushing them to offline solicitation.</div>
+                                </div>
+                                <div class="fix-shipped">
+                                    <strong>Fix Shipped:</strong> Include toll/parking charges directly into upfront fares with clear driver bifurcation, and penalize offline-ride solicitation while adding milestone rewards.
+                                </div>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <!-- 6. Google Maps RCA -->
+                <div class="card portfolio-item fade-in" data-category="RCAs">
+                    <div class="card-thumb"><span class="card-icon">🗺️</span></div>
+                    <div class="card-content">
+                        <span class="card-badge">RCAs</span>
+                        <h3 class="card-title">Google Maps DAU Drop</h3>
+                        <p class="card-desc">Investigating a sudden 10% global drop in Daily Active Users on Google Maps.</p>
+                        
+                        <details class="artifact-view">
+                            <summary>View Causal Diagram</summary>
+                            <div class="artifact-content">
+                                <div class="why-ladder">
+                                    <div class="why-step">Global 10% drop in DAUs seeking navigation over the past week.</div>
+                                    <div class="why-step">Users open the app and type in a search, but drop off immediately.</div>
+                                    <div class="why-step">The search results are taking too long to load (latency spikes).</div>
+                                    <div class="why-step">The mapping index is failing to return rapid queries, causing timeouts.</div>
+                                    <div class="root-cause">Root Cause: Search index degradation / high-resolution image loads causing critical latency, leading to user abandonment.</div>
+                                </div>
+                                <div class="fix-shipped">
+                                    <strong>Fix Shipped:</strong> Rollback recent infrastructure changes to map rendering and optimize search index query times to restore sub-second load.
+                                </div>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <!-- 7. Media.net Guesstimate -->
+                <div class="card portfolio-item fade-in" data-category="Guesstimates">
+                    <div class="card-thumb"><span class="card-icon">💳</span></div>
                     <div class="card-content">
                         <span class="card-badge">Guesstimates</span>
-                        <!-- [REPLACE_ME] Replace with real Guesstimate Title -->
-                        <h3 class="card-title">Swiggy Orders Per Hour</h3>
-                        <p class="card-desc">Estimating peak-hour food delivery volume across major Indian metros.</p>
+                        <h3 class="card-title">Daily UPI Transactions</h3>
+                        <p class="card-desc">Estimating the total number of UPI transactions across India in a single day.</p>
                         
                         <details class="artifact-view">
                             <summary>View Estimation Breakdown</summary>
                             <div class="artifact-content">
+                                <p style="margin-bottom:1rem;"><strong>Approach:</strong> Top-down estimation based on population, smartphone penetration, and internet access.</p>
                                 <table class="guesstimate-table">
                                     <thead>
                                         <tr>
                                             <th>Variable</th>
+                                            <th>Assumption / Calculation</th>
                                             <th>Value</th>
-                                            <th>Rationale</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>Urban Population</td>
-                                            <td>~420M</td>
-                                            <td>30% of 1.4B</td>
+                                            <td>Eligible Population</td>
+                                            <td>18+ years (60% of 1.4B)</td>
+                                            <td>~840M</td>
                                         </tr>
                                         <tr>
-                                            <td>Target Segment (15-50 yrs)</td>
-                                            <td>~170M</td>
-                                            <td>60% of urban smartphone users</td>
+                                            <td>Urban vs Rural Split</td>
+                                            <td>30% Urban / 70% Rural</td>
+                                            <td>250M (U) / 590M (R)</td>
                                         </tr>
                                         <tr>
-                                            <td>Swiggy Market Share</td>
-                                            <td>~35%</td>
-                                            <td>Duopoly with Zomato</td>
+                                            <td>Internet Penetration</td>
+                                            <td>95% of Urban, 90% of Rural (of smartphone users)</td>
+                                            <td>220M (U) / 320M (R)</td>
                                         </tr>
                                         <tr>
+                                            <td>UPI Penetration</td>
+                                            <td>90% Urban, 40% Rural</td>
+                                            <td>200M (U) / 130M (R)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Transaction Frequency</td>
+                                            <td>Power (3/day), Active (2/day), Passive (1/day)</td>
+                                            <td>Weighted avg</td>
+                                        </tr>
+                                        <tr style="background: #EEF2FF;">
                                             <td><strong>Final Estimate</strong></td>
-                                            <td><strong>~3 Lakh/hr</strong></td>
-                                            <td>Peak weekend hours (8-10 PM)</td>
+                                            <td><strong>Sum of daily transactions</strong></td>
+                                            <td><strong>~51 Crores / day</strong></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div style="margin-top:1rem; padding:1rem; background:#F9FAFB; border-left:4px solid var(--accent);">
+                                    <strong>Sanity Check:</strong> In 2024, the actual average was 46.6 crores/day, putting this estimate highly within range.
+                                </div>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <!-- 8. Netflix Guesstimate -->
+                <div class="card portfolio-item fade-in" data-category="Guesstimates">
+                    <div class="card-thumb"><span class="card-icon">✈️</span></div>
+                    <div class="card-content">
+                        <span class="card-badge">Guesstimates</span>
+                        <h3 class="card-title">Airborne Planes in India</h3>
+                        <p class="card-desc">Estimating the number of domestic passenger planes in the air at any given hour.</p>
+                        
+                        <details class="artifact-view">
+                            <summary>View Estimation Breakdown</summary>
+                            <div class="artifact-content">
+                                <p style="margin-bottom:1rem;"><strong>Approach:</strong> Bottom-up based on airport throughput and runway capacity.</p>
+                                <table class="guesstimate-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Variable</th>
+                                            <th>Assumption / Calculation</th>
+                                            <th>Value</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Busy Airports (8)</td>
+                                            <td>3 runways, 1 flight/5mins, 24hrs</td>
+                                            <td>~6,900 flights/day</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Intermediate Airports (30)</td>
+                                            <td>1 runway, 1 flight/10mins, 75% util</td>
+                                            <td>~3,200 flights/day</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Total Flights/Day</td>
+                                            <td>Sum of all airport tiers</td>
+                                            <td>~10,750 flights</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Average Flight Duration</td>
+                                            <td>Trunk routes (Delhi-Mumbai etc.)</td>
+                                            <td>~2 hours</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Total Flight-Hours</td>
+                                            <td>10,750 * 2 hours</td>
+                                            <td>21,500 hours/day</td>
+                                        </tr>
+                                        <tr style="background: #EEF2FF;">
+                                            <td><strong>Final Estimate</strong></td>
+                                            <td><strong>21,500 / 24 hours</strong></td>
+                                            <td><strong>~900 planes/hour</strong></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -321,55 +492,160 @@
                     </div>
                 </div>
 
-                <!-- 4. PRD Card -->
-                <div class="card portfolio-item" data-category="PRDs">
-                    <div class="card-thumb"><span class="card-icon">📄</span></div>
+                <!-- 9. Zomato Guesstimate -->
+                <div class="card portfolio-item fade-in" data-category="Guesstimates">
+                    <div class="card-thumb"><span class="card-icon">🍽️</span></div>
                     <div class="card-content">
-                        <span class="card-badge">PRDs</span>
-                        <!-- [REPLACE_ME] Replace with real PRD Title -->
-                        <h3 class="card-title">EdPilot Core PRD</h3>
-                        <p class="card-desc">0-1 Product Requirements Document for an AI-driven career guidance platform.</p>
+                        <span class="card-badge">Guesstimates</span>
+                        <h3 class="card-title">Yearly Zomato Reviews</h3>
+                        <p class="card-desc">Estimating the total number of app reviews posted on Zomato in India per year.</p>
+                        
                         <details class="artifact-view">
-                            <!-- [REPLACE_ME] Add link to actual PRD document -->
-                            <summary>View Documentation</summary>
+                            <summary>View Estimation Breakdown</summary>
                             <div class="artifact-content">
-                                <a href="[PRD_URL]" target="_blank" style="color: var(--accent); text-decoration: underline;">Read Full PRD →</a>
+                                <p style="margin-bottom:1rem;"><strong>Approach:</strong> Top-down from total orders to review conversion rate.</p>
+                                <table class="guesstimate-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Variable</th>
+                                            <th>Assumption / Calculation</th>
+                                            <th>Value</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Online Order Users</td>
+                                            <td>50% of urban 15-50 yr olds</td>
+                                            <td>~100M people</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Zomato Market Share</td>
+                                            <td>Duopoly (50%)</td>
+                                            <td>~50M users</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Total Yearly Orders</td>
+                                            <td>Power(120/yr) + Active(48/yr)</td>
+                                            <td>~3.2 Billion orders</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Review Conversion Rate</td>
+                                            <td>Weighted average across user types</td>
+                                            <td>~4% per order</td>
+                                        </tr>
+                                        <tr style="background: #EEF2FF;">
+                                            <td><strong>Final Estimate</strong></td>
+                                            <td><strong>3.2B orders * 4%</strong></td>
+                                            <td><strong>~13 Crores reviews/yr</strong></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </details>
                     </div>
                 </div>
 
-                <!-- 5. Product Teardowns Card -->
-                <div class="card portfolio-item" data-category="Product Teardowns">
-                    <div class="card-thumb"><span class="card-icon">🧩</span></div>
+                <!-- 10. Swiggy Guesstimate -->
+                <div class="card portfolio-item fade-in" data-category="Guesstimates">
+                    <div class="card-thumb"><span class="card-icon">🛵</span></div>
                     <div class="card-content">
-                        <span class="card-badge">Product Teardowns</span>
-                        <!-- [REPLACE_ME] Replace with real Teardown Title -->
-                        <h3 class="card-title">Spotify Onboarding Flow</h3>
-                        <p class="card-desc">Analysis of Spotify's user activation funnel and personalization algorithms.</p>
+                        <span class="card-badge">Guesstimates</span>
+                        <h3 class="card-title">Swiggy Orders Per Hour</h3>
+                        <p class="card-desc">Estimating peak-hour food delivery volume across major Indian metros.</p>
+                        
                         <details class="artifact-view">
-                            <!-- [REPLACE_ME] Add link to actual Teardown document -->
-                            <summary>View Teardown</summary>
+                            <summary>View Estimation Breakdown</summary>
                             <div class="artifact-content">
-                                <a href="[TEARDOWN_URL]" target="_blank" style="color: var(--accent); text-decoration: underline;">Read Teardown Deck →</a>
+                                <p style="margin-bottom:1rem;"><strong>Approach:</strong> Top-down estimation isolating peak weekend hours.</p>
+                                <table class="guesstimate-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Variable</th>
+                                            <th>Assumption / Calculation</th>
+                                            <th>Value</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Swiggy Users</td>
+                                            <td>35% market share of urban orderers</td>
+                                            <td>~2.8 Crores</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Monthly Orders</td>
+                                            <td>Segmented by user frequency</td>
+                                            <td>~6.9 Crores/month</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Weekend Peak Multiplier</td>
+                                            <td>30% of orders happen on 8 weekend days</td>
+                                            <td>~25 Lakh/weekend day</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Peak Hour Concentration</td>
+                                            <td>25% of daily orders occur between 8-10 PM</td>
+                                            <td>~6.25 Lakhs</td>
+                                        </tr>
+                                        <tr style="background: #EEF2FF;">
+                                            <td><strong>Final Estimate</strong></td>
+                                            <td><strong>6.25 Lakhs / 2 hours</strong></td>
+                                            <td><strong>~3 Lakh/hr</strong></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </details>
                     </div>
                 </div>
 
-                <!-- 6. Growth Experiments Card -->
-                <div class="card portfolio-item" data-category="Growth Experiments">
-                    <div class="card-thumb"><span class="card-icon">📈</span></div>
+                <!-- 11. Sprinklr Guesstimate -->
+                <div class="card portfolio-item fade-in" data-category="Guesstimates">
+                    <div class="card-thumb"><span class="card-icon">🚬</span></div>
                     <div class="card-content">
-                        <span class="card-badge">Growth Experiments</span>
-                        <!-- [REPLACE_ME] Replace with real Growth Title -->
-                        <h3 class="card-title">Sprinklr GTM Strategy</h3>
-                        <p class="card-desc">Proposed go-to-market experimentation for SMB user acquisition.</p>
+                        <span class="card-badge">Guesstimates</span>
+                        <h3 class="card-title">Daily Cigarette Consumption</h3>
+                        <p class="card-desc">Estimating the number of cigarettes smoked daily in Delhi.</p>
+                        
                         <details class="artifact-view">
-                            <!-- [REPLACE_ME] Add link to actual GTM document -->
-                            <summary>View Strategy</summary>
+                            <summary>View Estimation Breakdown</summary>
                             <div class="artifact-content">
-                                <a href="[GTM_URL]" target="_blank" style="color: var(--accent); text-decoration: underline;">Read Strategy Doc →</a>
+                                <p style="margin-bottom:1rem;"><strong>Approach:</strong> Top-down segmentation by gender and smoking frequency.</p>
+                                <table class="guesstimate-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Variable</th>
+                                            <th>Assumption / Calculation</th>
+                                            <th>Value</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Delhi Adult Population</td>
+                                            <td>60% of 3.5 Crores</td>
+                                            <td>~2.1 Crores</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Filter Cigarette Consumers</td>
+                                            <td>90% (excluding bidis/vapes)</td>
+                                            <td>~1.9 Crores</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Smoking Prevalence</td>
+                                            <td>35% of Men, 10% of Women</td>
+                                            <td>~42.5 Lakh smokers</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Consumption Frequency</td>
+                                            <td>Heavy (10/day), Mod (5/day), Social (2/day)</td>
+                                            <td>Weighted avg: 4.5/day</td>
+                                        </tr>
+                                        <tr style="background: #EEF2FF;">
+                                            <td><strong>Final Estimate</strong></td>
+                                            <td><strong>42.5 Lakhs * 4.5</strong></td>
+                                            <td><strong>~1.93 Crores/day</strong></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </details>
                     </div>
