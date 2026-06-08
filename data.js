@@ -23,7 +23,6 @@ const projects = [
     category: "Product Design",
     summary: "Product design case study for Netflix",
     skills: ["User Experience", "Wireframing"],
-    isHtml: true,
     link: "case-study.html?id=3",
     thumbnail: "assets/design.png"
   },
@@ -33,7 +32,6 @@ const projects = [
     category: "Product Design",
     summary: "Product design case study for Uber",
     skills: ["User Experience", "Wireframing"],
-    driveId: "1jLgrPYTyfau9fqy-GmzUR_sP0xsLPk4x",
     link: "case-study.html?id=4",
     thumbnail: "assets/design.png"
   },
@@ -43,7 +41,6 @@ const projects = [
     category: "Guesstimates",
     summary: "Market sizing and estimation",
     skills: ["Analytical Thinking", "Market Sizing"],
-    driveId: "18YPMIC5KCek1etLXCghcSxihdRxVq1FH",
     link: "case-study.html?id=5",
     thumbnail: "assets/teardowns.png"
   },
@@ -53,7 +50,6 @@ const projects = [
     category: "Guesstimates",
     summary: "Market sizing and estimation",
     skills: ["Analytical Thinking", "Market Sizing"],
-    driveId: "1SdmHl_KMgNtaveScpnUBGFe2EHB4wUST",
     link: "case-study.html?id=6",
     thumbnail: "assets/teardowns.png"
   },
@@ -63,7 +59,6 @@ const projects = [
     category: "Guesstimates",
     summary: "Market sizing and estimation",
     skills: ["Analytical Thinking", "Market Sizing"],
-    driveId: "1kBHJuhbUctisDKABpnsC12T3xoAcci9M",
     link: "case-study.html?id=7",
     thumbnail: "assets/teardowns.png"
   },
@@ -73,7 +68,6 @@ const projects = [
     category: "Guesstimates",
     summary: "Market sizing and estimation",
     skills: ["Analytical Thinking", "Market Sizing"],
-    driveId: "1woSole0arVZYpdNPd159Jhx6YtrWhVqV",
     link: "case-study.html?id=8",
     thumbnail: "assets/teardowns.png"
   },
@@ -83,7 +77,6 @@ const projects = [
     category: "RCAs",
     summary: "Root Cause Analysis",
     skills: ["Problem Solving", "Data Analysis"],
-    driveId: "1u3Nkaha8MoJvzlQzBzuzPIPcUeJDvfBk",
     link: "case-study.html?id=9",
     thumbnail: "assets/teardowns.png"
   },
@@ -93,7 +86,6 @@ const projects = [
     category: "RCAs",
     summary: "Root Cause Analysis",
     skills: ["Problem Solving", "Data Analysis"],
-    driveId: "11Ng3NVOVsLxbWOufi3A7DkOg-UIP9PPR",
     link: "case-study.html?id=10",
     thumbnail: "assets/teardowns.png"
   },
@@ -103,7 +95,6 @@ const projects = [
     category: "RCAs",
     summary: "Root Cause Analysis",
     skills: ["Problem Solving", "Data Analysis"],
-    driveId: "1Rl8iv5m8XIQQH-QrWsVBKaGwEi-0LJaV",
     link: "case-study.html?id=11",
     thumbnail: "assets/teardowns.png"
   },
@@ -113,7 +104,6 @@ const projects = [
     category: "RCAs",
     summary: "Root Cause Analysis",
     skills: ["Problem Solving", "Data Analysis"],
-    driveId: "1oKCiD0K97F9w3mLlBgP7IWnOV_xRIxoV",
     link: "case-study.html?id=12",
     thumbnail: "assets/teardowns.png"
   },
@@ -123,7 +113,6 @@ const projects = [
     category: "Growth Experiments",
     summary: "Go-To-Market strategy document",
     skills: ["GTM", "Product Strategy", "Analysis"],
-    driveId: "1V-evdSXp2RNaoyP15ukSWNbdXN7nQWVy",
     link: "case-study.html?id=13",
     thumbnail: "assets/teardowns.png"
   }
