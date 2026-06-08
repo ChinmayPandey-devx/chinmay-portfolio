@@ -95,6 +95,12 @@
                 
                 if (project.driveId) {
                     document.getElementById('case-body').innerHTML = `<iframe src="https://drive.google.com/file/d/${project.driveId}/preview" width="100%" height="800" style="border:none; border-radius: 8px;"></iframe>`;
+                } else if (project.isHtml) {
+                    let contentText = "Content could not be loaded.";
+                    if (typeof caseContent !== 'undefined' && caseContent[id]) {
+                        contentText = caseContent[id];
+                    }
+                    document.getElementById('case-body').innerHTML = contentText;
                 } else {
                     let contentText = "Content could not be loaded.";
                     if (typeof caseContent !== 'undefined' && caseContent[id]) {

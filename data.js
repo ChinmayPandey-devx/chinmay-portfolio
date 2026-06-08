@@ -23,7 +23,7 @@ const projects = [
     category: "Product Design",
     summary: "Product design case study for Netflix",
     skills: ["User Experience", "Wireframing"],
-    driveId: "12ml8mxIder7qVk-ytRj7J8x_Kr6pqsEt",
+    isHtml: true,
     link: "case-study.html?id=3",
     thumbnail: "assets/design.png"
   },
