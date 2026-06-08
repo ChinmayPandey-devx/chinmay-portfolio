@@ -93,23 +93,27 @@
                     skillsContainer.appendChild(span);
                 });
                 
-                let contentText = "Content could not be loaded.";
-                if (typeof caseContent !== 'undefined' && caseContent[id]) {
-                    contentText = caseContent[id];
-                }
-                
-                // Format text into HTML
-                const formattedHtml = contentText.split('\n\n').map(p => {
-                    p = p.trim();
-                    if (p.length === 0) return '';
-                    // bold short lines
-                    if (p.length < 80 && !p.includes('.')) {
-                        return '<h3>' + p.replace(/\n/g, '<br>') + '</h3>';
+                if (project.driveId) {
+                    document.getElementById('case-body').innerHTML = `<iframe src="https://drive.google.com/file/d/${project.driveId}/preview" width="100%" height="800" style="border:none; border-radius: 8px;"></iframe>`;
+                } else {
+                    let contentText = "Content could not be loaded.";
+                    if (typeof caseContent !== 'undefined' && caseContent[id]) {
+                        contentText = caseContent[id];
                     }
-                    return '<p>' + p.replace(/\n/g, '<br>') + '</p>';
-                }).join('');
-                
-                document.getElementById('case-body').innerHTML = formattedHtml;
+                    
+                    // Format text into HTML
+                    const formattedHtml = contentText.split('\n\n').map(p => {
+                        p = p.trim();
+                        if (p.length === 0) return '';
+                        // bold short lines
+                        if (p.length < 80 && !p.includes('.')) {
+                            return '<h3>' + p.replace(/\n/g, '<br>') + '</h3>';
+                        }
+                        return '<p>' + p.replace(/\n/g, '<br>') + '</p>';
+                    }).join('');
+                    
+                    document.getElementById('case-body').innerHTML = formattedHtml;
+                }
             } else {
                 document.getElementById('case-title').textContent = "Case Study Not Found";
             }
