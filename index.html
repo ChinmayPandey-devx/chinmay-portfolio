@@ -1,238 +1,574 @@
 <!DOCTYPE html>
-<html lang="en" class="light">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chinmay Pandey | Product Builder</title>
-    <meta name="description" content="Portfolio of Chinmay Pandey, Product Builder & Product Management Intern building AI products and solving user problems.">
-    <meta property="og:title" content="Chinmay Pandey | Product Builder">
-    <meta property="og:description" content="Product Management Portfolio of Chinmay Pandey. Aspiring PM, 0→1 Builder, AI Products.">
-    <meta property="og:image" content="assets/chinmay.jpg">
-    <meta property="og:type" content="website">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <title>Chinmay Pandey | Product Manager</title>
+    <style>
+        :root {
+            --bg: #FAFAF8;
+            --text-main: #1A1A1A;
+            --text-muted: #666666;
+            --accent: #4F46E5;
+            --accent-hover: #4338CA;
+            --border: #E5E7EB;
+            --surface: #FFFFFF;
+            --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: var(--font);
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+        
+        a { color: inherit; text-decoration: none; }
+        
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+        
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            background: rgba(250, 250, 248, 0.9);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+        }
+        .nav-content {
+            display: flex; justify-content: space-between; align-items: center;
+            height: 70px;
+        }
+        .logo { font-weight: 700; font-size: 1.25rem; color: var(--text-main); }
+        .nav-links { display: flex; gap: 2rem; }
+        .nav-links a { font-weight: 500; font-size: 0.95rem; color: var(--text-muted); transition: color 0.2s; }
+        .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+        
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center;
+            padding: 0.75rem 1.5rem; border-radius: 6px; font-weight: 600; font-size: 0.95rem;
+            transition: all 0.2s; cursor: pointer; border: 1px solid transparent;
+        }
+        .btn-primary { background: var(--accent); color: #fff; }
+        .btn-primary:hover { background: var(--accent-hover); }
+        .btn-secondary { background: transparent; border-color: var(--border); color: var(--text-main); }
+        .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+        
+        section { padding: 6rem 0; }
+        .section-title { font-size: 2rem; margin-bottom: 3rem; font-weight: 700; color: var(--text-main); }
+        
+        /* Hero */
+        .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding-top: 70px; }
+        .hero-subtext { color: var(--accent); font-weight: 600; margin-bottom: 1.5rem; font-size: 1rem; letter-spacing: 0.05em; text-transform: uppercase; }
+        .hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1; margin-bottom: 2.5rem; max-width: 900px; letter-spacing: -0.02em; font-weight: 700; }
+        .hero-actions { display: flex; gap: 1rem; margin-bottom: 4rem; }
+        
+        .stats-row { display: flex; gap: 3rem; flex-wrap: wrap; border-top: 1px solid var(--border); padding-top: 2rem; }
+        .stat-item { display: flex; flex-direction: column; }
+        .stat-num { font-size: 1.75rem; font-weight: 700; color: var(--text-main); }
+        .stat-label { font-size: 0.85rem; color: var(--text-muted); font-weight: 500; margin-top: 0.25rem; }
+        
+        /* Portfolio */
+        .filter-tabs { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 3rem; }
+        .filter-btn {
+            background: transparent; border: 1px solid var(--border); padding: 0.5rem 1.25rem; border-radius: 20px;
+            font-size: 0.9rem; font-weight: 500; cursor: pointer; transition: all 0.2s; color: var(--text-muted);
+        }
+        .filter-btn:hover { border-color: var(--text-muted); }
+        .filter-btn.active { background: var(--text-main); color: #fff; border-color: var(--text-main); }
+        
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2rem; }
+        
+        .card {
+            background: var(--surface); border: 1px solid var(--border); border-radius: 8px;
+            overflow: hidden; display: flex; flex-direction: column; transition: transform 0.2s;
+        }
+        .card:hover { transform: translateY(-4px); border-color: #D1D5DB; }
+        .card-thumb {
+            height: 160px; background: #EEF2FF; display: flex; align-items: center; justify-content: center;
+            border-bottom: 1px solid var(--border);
+        }
+        .card-icon { font-size: 2.5rem; }
+        .card-content { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
+        .card-badge { align-self: flex-start; background: #F3F4F6; color: var(--text-muted); padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.75rem; font-weight: 600; margin-bottom: 1rem; text-transform: uppercase; }
+        .card-title { font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem; }
+        .card-desc { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem; flex-grow: 1; }
+        
+        /* Expandable Artifact View inside Card */
+        details.artifact-view { margin-top: auto; border-top: 1px solid var(--border); padding-top: 1rem; }
+        details.artifact-view summary { font-weight: 600; color: var(--accent); cursor: pointer; list-style: none; font-size: 0.9rem; display: flex; align-items: center; }
+        details.artifact-view summary::-webkit-details-marker { display: none; }
+        details.artifact-view summary::after { content: "→"; margin-left: 0.5rem; transition: transform 0.2s; }
+        details.artifact-view[open] summary::after { transform: rotate(90deg); }
+        
+        .artifact-content { padding-top: 1.5rem; font-size: 0.9rem; color: var(--text-main); }
+        
+        /* 5-Why RCA Ladder */
+        .why-ladder { display: flex; flex-direction: column; gap: 0.5rem; }
+        .why-step { background: #F9FAFB; padding: 1rem; border-left: 3px solid var(--border); }
+        .why-step::before { content: "Why?"; font-weight: 700; color: var(--text-muted); display: block; font-size: 0.75rem; margin-bottom: 0.25rem; text-transform: uppercase; }
+        .root-cause { background: #EEF2FF; border-left-color: var(--accent); }
+        .root-cause::before { content: "Root Cause Identified"; color: var(--accent); }
+        .fix-shipped { margin-top: 1rem; padding: 1rem; background: #ECFDF5; border: 1px solid #A7F3D0; border-radius: 6px; }
+        .fix-shipped strong { color: #065F46; display: block; margin-bottom: 0.25rem; }
+        
+        /* Product Design Mockup */
+        .mockup-placeholder { border: 2px dashed var(--border); border-radius: 8px; padding: 3rem 1rem; text-align: center; background: #F9FAFB; }
+        .mockup-placeholder span { display: block; color: var(--text-muted); font-weight: 500; }
+        
+        /* Guesstimate Table */
+        .guesstimate-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+        .guesstimate-table th, .guesstimate-table td { border: 1px solid var(--border); padding: 0.75rem; text-align: left; }
+        .guesstimate-table th { background: #F9FAFB; font-weight: 600; color: var(--text-muted); }
+        
+        /* Experience */
+        .timeline { border-left: 2px solid var(--border); margin-left: 1rem; padding-left: 2.5rem; display: flex; flex-direction: column; gap: 3rem; }
+        .timeline-item { position: relative; }
+        .timeline-marker { position: absolute; left: -3.1rem; top: 0.25rem; width: 1rem; height: 1rem; background: var(--bg); border: 2px solid var(--accent); border-radius: 50%; }
+        .role-title { font-size: 1.25rem; font-weight: 600; color: var(--text-main); margin-bottom: 0.25rem; }
+        .company-meta { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem; font-weight: 500; }
+        .timeline-item ul { padding-left: 1.25rem; color: var(--text-muted); font-size: 0.95rem; }
+        .timeline-item li { margin-bottom: 0.5rem; }
+        
+        /* About */
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+        .about-text p { margin-bottom: 1.5rem; color: var(--text-muted); font-size: 1.05rem; }
+        
+        .skills-group { margin-bottom: 2rem; }
+        .skills-group h4 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-main); margin-bottom: 1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+        .chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+        .chip { background: #F3F4F6; color: var(--text-main); padding: 0.4rem 0.8rem; border-radius: 6px; font-size: 0.85rem; font-weight: 500; }
+        
+        .certs-scroll { display: flex; overflow-x: auto; gap: 1rem; padding-bottom: 1rem; scrollbar-width: thin; }
+        .cert-card { flex: 0 0 auto; width: 260px; border: 1px solid var(--border); padding: 1rem; border-radius: 8px; background: var(--surface); display: flex; align-items: center; gap: 1rem; }
+        .cert-icon { font-size: 1.5rem; }
+        .cert-name { font-size: 0.85rem; font-weight: 500; line-height: 1.4; }
+        
+        /* Footer */
+        footer { background: var(--surface); border-top: 1px solid var(--border); padding: 5rem 0; text-align: center; }
+        .contact-cta { font-size: 2rem; font-weight: 700; margin-bottom: 2rem; }
+        .social-links { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 3rem; }
+        .social-links a { font-weight: 600; color: var(--text-muted); transition: color 0.2s; }
+        .social-links a:hover { color: var(--accent); }
+        
+        /* Utils */
+        .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2.25rem; }
+            .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .stats-row { gap: 1.5rem; }
+        }
+    </style>
 </head>
 <body>
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="#" class="logo">CP.</a>
+
+    <nav>
+        <div class="container nav-content">
+            <a href="#" class="logo">Chinmay Pandey.</a>
             <div class="nav-links">
-                <a href="#work">Work</a>
-                <a href="#portfolio">Portfolio</a>
-                <a href="#experience">Experience</a>
-                <a href="#about">About</a>
-                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
-                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-                </button>
+                <a href="#portfolio" class="nav-link">Portfolio</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#contact" class="nav-link">Contact</a>
             </div>
         </div>
     </nav>
 
-    <main class="container">
-        <!-- Hero Section -->
-        <section id="hero" class="hero">
-            <div class="hero-content fade-in-up">
-                <p class="hero-label">Chinmay Pandey • Aspiring PM · 0→1 Builder · AI Products</p>
-                <h1 class="hero-title">Building AI Products,<br>Solving User Problems,<br>Driving Product Decisions.</h1>
-                <p class="hero-subtitle" style="font-size: 1.05rem; margin-bottom: 1rem;">Bridging the gap between engineering and user needs to build products that drive real impact.</p>
-                <p class="hero-subtitle">Product Management Intern with experience in 0→1 product development, user research, feature prioritization, stakeholder management, AI products, and cross-functional leadership.</p>
-                <div class="hero-actions">
-                    <a href="#portfolio" class="btn btn-primary">View Portfolio</a>
-                    <a href="https://drive.google.com/file/d/1kbarcKrs1S8VzsdSAZM1I4b-duYUOLpO/view?usp=sharing" target="_blank" class="btn btn-secondary">Download Resume</a>
-                </div>
-                <div class="hero-metrics">
-                    <div class="metric">
-                        <span class="metric-value">15+</span>
-                        <span class="metric-label">User Interviews</span>
-                    </div>
-                    <div class="metric">
-                        <span class="metric-value">2</span>
-                        <span class="metric-label">AI Products Built</span>
-                    </div>
-                    <div class="metric">
-                        <span class="metric-value">4</span>
-                        <span class="metric-label">Product & Leadership Experiences</span>
-                    </div>
-                    <div class="metric">
-                        <span class="metric-value">20+</span>
-                        <span class="metric-label">Product Case Studies</span>
-                    </div>
-                </div>
-                <p class="hero-teaser" style="margin-top: 1.5rem; color: var(--text-secondary); font-size: 0.95rem;">
-                    Recent work: <a href="https://ed-pilot.vercel.app/" target="_blank" style="text-decoration: underline; color: var(--text-primary); font-weight: 500;">EdPilot</a> · <a href="#work" style="text-decoration: underline; color: var(--text-primary); font-weight: 500;">PrepSync AI</a>
-                </p>
+    <main>
+        <!-- HERO -->
+        <section class="hero container fade-in" id="hero">
+            <div class="hero-subtext">PM Intern · AI/ML · MMMUT ECE · CGPA 8.02</div>
+            <h1>Shipped 2 AI products from zero. Ran 15+ user interviews. Now looking for the next problem worth solving.</h1>
+            <div class="hero-actions">
+                <a href="#portfolio" class="btn btn-primary">View Work</a>
+                <!-- [REPLACE_ME] Add actual resume PDF link in the href below -->
+                <a href="[RESUME_URL]" target="_blank" class="btn btn-secondary">Download Resume</a>
             </div>
-            <div class="hero-image-wrapper fade-in-up delay-200">
-                <img src="assets/chinmay.jpg" alt="Chinmay Pandey" class="hero-image">
+            <div class="stats-row">
+                <div class="stat-item">
+                    <span class="stat-num">15+</span>
+                    <span class="stat-label">User Interviews</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">2</span>
+                    <span class="stat-label">AI Products Shipped</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">4</span>
+                    <span class="stat-label">PM Experiences</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">20+</span>
+                    <span class="stat-label">Case Studies</span>
+                </div>
             </div>
         </section>
 
-        <!-- Featured Work Section -->
-        <section id="work" class="section fade-in-up delay-300">
-            <div class="section-header">
-                <h2>Featured Work</h2>
+        <!-- PORTFOLIO -->
+        <section id="portfolio" class="container fade-in">
+            <h2 class="section-title">Selected Work</h2>
+            
+            <div class="filter-tabs">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="RCAs">RCAs</button>
+                <button class="filter-btn" data-filter="Product Design">Product Design</button>
+                <button class="filter-btn" data-filter="Guesstimates">Guesstimates</button>
+                <button class="filter-btn" data-filter="PRDs">PRDs</button>
+                <button class="filter-btn" data-filter="Product Teardowns">Product Teardowns</button>
+                <button class="filter-btn" data-filter="Growth Experiments">Growth Experiments</button>
             </div>
-            <div class="featured-grid" id="featured-container">
-                <!-- Fallback HTML for SEO & without JS -->
-                <div class="project-card">
-                    <div class="project-content">
-                        <span class="project-category">Product Design</span>
-                        <h3 class="project-title">PrepSync AI</h3>
-                        <p class="project-summary">AI Placement Intelligence Platform</p>
+
+            <div class="grid" id="portfolio-grid">
+                
+                <!-- 1. RCA Card -->
+                <div class="card portfolio-item" data-category="RCAs">
+                    <div class="card-thumb"><span class="card-icon">🔍</span></div>
+                    <div class="card-content">
+                        <span class="card-badge">RCAs</span>
+                        <!-- [REPLACE_ME] Replace with real RCA Title -->
+                        <h3 class="card-title">Uber Rider Drop-off RCA</h3>
+                        <p class="card-desc">Investigating a 15% drop in completed rides using a 5-Why root cause framework.</p>
+                        
+                        <details class="artifact-view">
+                            <summary>View Causal Diagram</summary>
+                            <div class="artifact-content">
+                                <div class="why-ladder">
+                                    <div class="why-step">Riders are canceling trips after matching.</div>
+                                    <div class="why-step">Wait times are exceeding 12 minutes in urban areas.</div>
+                                    <div class="why-step">Driver supply has dropped significantly during peak hours.</div>
+                                    <div class="root-cause">Root Cause: New incentive structure disincentivizes short, high-traffic trips.</div>
+                                </div>
+                                <div class="fix-shipped">
+                                    <strong>Fix Shipped:</strong> Adjusted surge pricing algorithm to guarantee minimum trip earnings, recovering supply by 12%.
+                                </div>
+                            </div>
+                        </details>
                     </div>
                 </div>
-                <div class="project-card">
-                    <div class="project-content">
-                        <span class="project-category">PRDs</span>
-                        <h3 class="project-title">EdPilot</h3>
-                        <p class="project-summary">AI Career Guidance Platform</p>
+
+                <!-- 2. Product Design Card -->
+                <div class="card portfolio-item" data-category="Product Design">
+                    <div class="card-thumb"><span class="card-icon">✨</span></div>
+                    <div class="card-content">
+                        <span class="card-badge">Product Design</span>
+                        <!-- [REPLACE_ME] Replace with real Product Design Title -->
+                        <h3 class="card-title">Netflix Senior UX Redesign</h3>
+                        <p class="card-desc">Designing an accessible streaming interface focused on voice navigation and contrast.</p>
+                        
+                        <details class="artifact-view">
+                            <summary>View Wireframes</summary>
+                            <div class="artifact-content">
+                                <!-- [REPLACE_ME] Replace this placeholder div with an <img> tag pointing to actual screenshots -->
+                                <div class="mockup-placeholder">
+                                    <span>📱 Figma link & screenshots coming soon</span>
+                                </div>
+                            </div>
+                        </details>
                     </div>
                 </div>
-                <!-- Injected via JS -->
+
+                <!-- 3. Guesstimate Card -->
+                <div class="card portfolio-item" data-category="Guesstimates">
+                    <div class="card-thumb"><span class="card-icon">📊</span></div>
+                    <div class="card-content">
+                        <span class="card-badge">Guesstimates</span>
+                        <!-- [REPLACE_ME] Replace with real Guesstimate Title -->
+                        <h3 class="card-title">Swiggy Orders Per Hour</h3>
+                        <p class="card-desc">Estimating peak-hour food delivery volume across major Indian metros.</p>
+                        
+                        <details class="artifact-view">
+                            <summary>View Estimation Breakdown</summary>
+                            <div class="artifact-content">
+                                <table class="guesstimate-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Variable</th>
+                                            <th>Value</th>
+                                            <th>Rationale</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Urban Population</td>
+                                            <td>~420M</td>
+                                            <td>30% of 1.4B</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Target Segment (15-50 yrs)</td>
+                                            <td>~170M</td>
+                                            <td>60% of urban smartphone users</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Swiggy Market Share</td>
+                                            <td>~35%</td>
+                                            <td>Duopoly with Zomato</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Final Estimate</strong></td>
+                                            <td><strong>~3 Lakh/hr</strong></td>
+                                            <td>Peak weekend hours (8-10 PM)</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <!-- 4. PRD Card -->
+                <div class="card portfolio-item" data-category="PRDs">
+                    <div class="card-thumb"><span class="card-icon">📄</span></div>
+                    <div class="card-content">
+                        <span class="card-badge">PRDs</span>
+                        <!-- [REPLACE_ME] Replace with real PRD Title -->
+                        <h3 class="card-title">EdPilot Core PRD</h3>
+                        <p class="card-desc">0-1 Product Requirements Document for an AI-driven career guidance platform.</p>
+                        <details class="artifact-view">
+                            <!-- [REPLACE_ME] Add link to actual PRD document -->
+                            <summary>View Documentation</summary>
+                            <div class="artifact-content">
+                                <a href="[PRD_URL]" target="_blank" style="color: var(--accent); text-decoration: underline;">Read Full PRD →</a>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <!-- 5. Product Teardowns Card -->
+                <div class="card portfolio-item" data-category="Product Teardowns">
+                    <div class="card-thumb"><span class="card-icon">🧩</span></div>
+                    <div class="card-content">
+                        <span class="card-badge">Product Teardowns</span>
+                        <!-- [REPLACE_ME] Replace with real Teardown Title -->
+                        <h3 class="card-title">Spotify Onboarding Flow</h3>
+                        <p class="card-desc">Analysis of Spotify's user activation funnel and personalization algorithms.</p>
+                        <details class="artifact-view">
+                            <!-- [REPLACE_ME] Add link to actual Teardown document -->
+                            <summary>View Teardown</summary>
+                            <div class="artifact-content">
+                                <a href="[TEARDOWN_URL]" target="_blank" style="color: var(--accent); text-decoration: underline;">Read Teardown Deck →</a>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <!-- 6. Growth Experiments Card -->
+                <div class="card portfolio-item" data-category="Growth Experiments">
+                    <div class="card-thumb"><span class="card-icon">📈</span></div>
+                    <div class="card-content">
+                        <span class="card-badge">Growth Experiments</span>
+                        <!-- [REPLACE_ME] Replace with real Growth Title -->
+                        <h3 class="card-title">Sprinklr GTM Strategy</h3>
+                        <p class="card-desc">Proposed go-to-market experimentation for SMB user acquisition.</p>
+                        <details class="artifact-view">
+                            <!-- [REPLACE_ME] Add link to actual GTM document -->
+                            <summary>View Strategy</summary>
+                            <div class="artifact-content">
+                                <a href="[GTM_URL]" target="_blank" style="color: var(--accent); text-decoration: underline;">Read Strategy Doc →</a>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
             </div>
         </section>
 
-        <!-- Product Portfolio -->
-        <section id="portfolio" class="section fade-in-up">
-            <div class="section-header">
-                <h2>Product Portfolio</h2>
-            </div>
-            <div class="portfolio-controls">
-                <input type="text" id="search-input" class="search-input" placeholder="Search case studies...">
-                <div class="filter-tabs" id="filter-tabs">
-                    <button class="filter-btn active" data-filter="all">All</button>
-                    <button class="filter-btn" data-filter="Product Teardowns">Product Teardowns</button>
-                    <button class="filter-btn" data-filter="Product Design">Product Design</button>
-                    <button class="filter-btn" data-filter="PRDs">PRDs</button>
-                    <button class="filter-btn" data-filter="RCAs">RCAs</button>
-                    <button class="filter-btn" data-filter="Guesstimates">Guesstimates</button>
-                    <button class="filter-btn" data-filter="Growth Experiments">Growth Experiments</button>
-                </div>
-            </div>
-            <div class="portfolio-list" id="portfolio-list">
-                <!-- Fallback HTML for SEO & without JS -->
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3 class="project-title">Netflix Product Design</h3>
-                        <p class="project-summary">Product design case study for Netflix</p>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3 class="project-title">Uber RCA</h3>
-                        <p class="project-summary">Root Cause Analysis</p>
-                    </div>
-                </div>
-                <!-- Injected via JS -->
-            </div>
-        </section>
-
-        <!-- Experience Timeline -->
-        <section id="experience" class="section fade-in-up">
-            <div class="section-header">
-                <h2>Experience</h2>
-            </div>
-            <div class="timeline" id="timeline-container">
-                <!-- Fallback HTML for SEO -->
+        <!-- EXPERIENCE -->
+        <section id="experience" class="container fade-in">
+            <h2 class="section-title">Experience</h2>
+            <div class="timeline">
+                
                 <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3 class="timeline-role">Product Management Intern</h3>
-                        <div class="timeline-company">KaryaKarta</div>
-                    </div>
+                    <div class="timeline-marker"></div>
+                    <h3 class="role-title">Secretary</h3>
+                    <div class="company-meta">Training & Placement Cell, MMMUT · Apr 2026 – Present</div>
+                    <ul>
+                        <li>Led a 20-member cross-functional team to streamline university placement processes.</li>
+                        <li>Built and managed PrepSync AI, defining MVPs and overseeing execution.</li>
+                        <li>Managed 6 internal coordination pipelines, significantly reducing operational bottlenecks.</li>
+                    </ul>
                 </div>
+
                 <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3 class="timeline-role">Founder's Office</h3>
-                        <div class="timeline-company">Aureeture AI</div>
-                    </div>
+                    <div class="timeline-marker"></div>
+                    <h3 class="role-title">Data Analyst Intern</h3>
+                    <div class="company-meta">Bluestock Fintech · Apr 2026 – Present</div>
+                    <ul>
+                        <li>Designed automated Python dashboards to track core financial metrics.</li>
+                        <li>Extracted actionable SQL insights to optimize data reporting pipelines.</li>
+                        <li>Reduced manual reporting time by 40% through automation.</li>
+                    </ul>
                 </div>
-                <!-- Injected via JS -->
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <h3 class="role-title">Product Management Intern</h3>
+                    <div class="company-meta">KaryaKarta · Dec 2025 – Apr 2026</div>
+                    <ul>
+                        <li>Drove the 0→1 product lifecycle for key marketplace features.</li>
+                        <li>Conducted 15+ generative user interviews to identify pain points and validate solutions.</li>
+                        <li>Applied MoSCoW prioritization to scope the MVP and collaborate with engineering.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <h3 class="role-title">Founder's Office</h3>
+                    <div class="company-meta">Aureeture AI · Feb 2026 – Apr 2026</div>
+                    <ul>
+                        <li>Assisted in building foundational AI products and formulating product strategy.</li>
+                        <li>Executed comprehensive competitive research to map market opportunities.</li>
+                        <li>Contributed directly to the product roadmap for the upcoming 2 quarters.</li>
+                    </ul>
+                </div>
+
             </div>
         </section>
 
-        <div class="grid-layout-2 fade-in-up">
-            <!-- About Section -->
-            <section id="about" class="section">
-                <div class="section-header">
-                    <h2>About Me</h2>
+        <!-- ABOUT -->
+        <section id="about" class="container fade-in">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>I started my journey in Electronics & Communication Engineering, but I quickly realized my true passion lies at the intersection of technology, design, and business. Transitioning into Product Management allowed me to focus on what matters most: solving real user problems.</p>
+                    <p>Over the past year, I've shipped 2 AI products from zero to one, conducted extensive user research, and learned how to prioritize ruthlessly. I am obsessed with building products that just make sense.</p>
                 </div>
-                <div class="about-content">
-                    <p>My transition from engineering to product was driven by an intense curiosity about <strong>why</strong> we build certain features over others, and <strong>how</strong> those decisions impact users. Engineering taught me how to build; product management taught me what to build.</p>
-                    <p>I thrive in the intersection of business, technology, and user experience. Over the past few years, I've had the opportunity to work closely with founders, helping them navigate the messy 0→1 phase of building AI products from the ground up.</p>
-                    <p>My strength lies in finding clarity amidst ambiguity, aligning cross-functional teams, and shipping products that genuinely solve user problems.</p>
+                <div class="about-skills">
+                    
+                    <div class="skills-group">
+                        <h4>Product Management</h4>
+                        <div class="chips">
+                            <span class="chip">0→1 Product</span>
+                            <span class="chip">PRD Writing</span>
+                            <span class="chip">User Research</span>
+                            <span class="chip">MoSCoW Prioritization</span>
+                            <span class="chip">Roadmapping</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-group">
+                        <h4>Technical & Data</h4>
+                        <div class="chips">
+                            <span class="chip">AI/ML Products</span>
+                            <span class="chip">Python</span>
+                            <span class="chip">SQL</span>
+                            <span class="chip">Data Analysis</span>
+                            <span class="chip">React.js</span>
+                            <span class="chip">Git</span>
+                        </div>
+                    </div>
+
                 </div>
-            </section>
-
-            <!-- Skills & Certifications -->
-            <div class="skills-certifications">
-                <section id="skills" class="section-mini">
-                    <div class="section-header-mini">
-                        <h3>Skills</h3>
-                    </div>
-                    <div class="skills-container" id="skills-container">
-                        <!-- Injected via JS -->
-                    </div>
-                </section>
-
-                <section id="certifications" class="section-mini">
-                    <div class="section-header-mini">
-                        <h3>Certifications</h3>
-                    </div>
-                    <div class="certifications-list" id="certifications-container">
-                        <!-- Injected via JS -->
-                    </div>
-                </section>
             </div>
-        </div>
 
-        <!-- Contact Section -->
-        <section id="contact" class="section contact-section fade-in-up">
-            <div class="contact-card">
-                <h2>Open to PM internships and full-time roles.</h2>
-                <p>Looking for new opportunities in Product Management.</p>
-                <div class="contact-links">
-                    <a href="tel:+919528551244" class="contact-link">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                        9528551244
-                    </a>
-                    <a href="mailto:chinmayworkpandey@gmail.com" class="contact-link">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                        Email
-                    </a>
-                    <a href="https://www.linkedin.com/in/chinmay-pandey-40a7a327b/" target="_blank" class="contact-link">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-                        LinkedIn
-                    </a>
-                    <a href="https://github.com/ChinmayPandey-devx" target="_blank" class="contact-link">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                        GitHub
-                    </a>
-                    <a href="https://drive.google.com/file/d/1kbarcKrs1S8VzsdSAZM1I4b-duYUOLpO/view?usp=sharing" target="_blank" class="contact-link">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-                        Resume
-                    </a>
+            <h3 style="font-size: 1.25rem; margin: 3rem 0 1.5rem;">Certifications</h3>
+            <div class="certs-scroll">
+                <div class="cert-card">
+                    <span class="cert-icon">📊</span>
+                    <span class="cert-name">Data Analysis & Forensic Technology (Deloitte)</span>
+                </div>
+                <div class="cert-card">
+                    <span class="cert-icon">🛡️</span>
+                    <span class="cert-name">Cyber Security (C-DAC)</span>
+                </div>
+                <div class="cert-card">
+                    <span class="cert-icon">🤖</span>
+                    <span class="cert-name">IoT & Embedded Systems (Emertxe)</span>
                 </div>
             </div>
         </section>
+
     </main>
 
-    <footer class="footer">
-        <div class="footer-content">
-            <p>&copy; 2026 Chinmay Pandey.</p>
-            <div class="footer-links">
-                <a href="#work">Work</a>
-                <a href="#portfolio">Portfolio</a>
-                <a href="#experience">Experience</a>
+    <!-- FOOTER / CONTACT -->
+    <footer id="contact">
+        <div class="container">
+            <h2 class="contact-cta">Open to PM internships — let's build something.</h2>
+            <div class="social-links">
+                <!-- [REPLACE_ME] Add actual links -->
+                <a href="mailto:chinmayworkpandey@gmail.com">Email</a>
+                <a href="[LINKEDIN_URL]" target="_blank">LinkedIn</a>
+                <a href="[GITHUB_URL]" target="_blank">GitHub</a>
+                <a href="[RESUME_URL]" target="_blank">Resume</a>
             </div>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">&copy; 2026 Chinmay Pandey. Designed from scratch.</p>
         </div>
     </footer>
 
-    <script src="data.js"></script>
-    <script src="script.js"></script>
+    <!-- LOGIC -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // 1. Portfolio Filtering
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const items = document.querySelectorAll('.portfolio-item');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Update active state
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    // Filter logic
+                    const filterValue = btn.getAttribute('data-filter');
+                    items.forEach(item => {
+                        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                            item.style.display = 'flex';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // 2. Scroll Fade-In Animation
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observer.observe(el);
+            });
+
+            // 3. Active Nav Highlight
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (scrollY >= (sectionTop - sectionHeight / 3)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').includes(current)) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+            
+        });
+    </script>
 </body>
 </html>
