@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ExternalLink, FileText, CheckCircle2, X, HelpCircle, Target, Award, BarChart } from 'lucide-react';
+import { CheckCircle2, X, HelpCircle, Target, Award, BarChart, Eye } from 'lucide-react';
 import { projects } from '../data/projects';
 
 const filters = [
@@ -92,9 +92,10 @@ export default function Portfolio() {
                 </h3>
                 <span 
                   title="Click to view interactive case study"
-                  className="text-accent bg-indigo-50 p-1.5 rounded-lg text-xs font-semibold flex-shrink-0"
+                  className="text-accent bg-indigo-50 p-1.5 rounded-lg text-xs font-semibold flex-shrink-0 flex items-center gap-1"
                 >
-                  View Case
+                  <Eye size={14} />
+                  <span>View Case</span>
                 </span>
               </div>
 
@@ -118,10 +119,10 @@ export default function Portfolio() {
                 </ul>
               </div>
               
-              {/* Tags & Action Buttons */}
-              <div className="pt-4 border-t border-gray-100 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mt-auto">
+              {/* Tags */}
+              <div className="pt-4 border-t border-gray-100 flex items-center justify-between gap-3 mt-auto">
                 <div className="flex flex-wrap gap-1.5">
-                  {project.tools.slice(0, 3).map((tool, i) => (
+                  {project.tools.map((tool, i) => (
                     <span 
                       key={i}
                       className="text-[11px] font-medium bg-gray-100 text-gray-600 px-2.5 py-0.5 rounded-md"
@@ -130,18 +131,6 @@ export default function Portfolio() {
                     </span>
                   ))}
                 </div>
-
-                <a 
-                  href={project.link} 
-                  target="_blank" 
-                  rel="noreferrer"
-                  onClick={(e) => e.stopPropagation()}
-                  className="inline-flex items-center gap-1.5 text-xs font-bold text-muted hover:text-accent transition-colors p-1 rounded hover:bg-gray-100"
-                >
-                  <FileText size={14} />
-                  <span>PDF File</span>
-                  <ExternalLink size={12} />
-                </a>
               </div>
             </div>
           </div>
@@ -296,29 +285,14 @@ export default function Portfolio() {
               )}
             </div>
 
-            {/* Modal Footer CTA */}
-            <div className="p-6 border-t border-gray-200 bg-gray-50 rounded-b-2xl flex flex-col sm:flex-row items-center justify-between gap-4">
-              <span className="text-xs text-muted font-medium">
-                Want to read the unedited original documentation?
-              </span>
-              <div className="flex items-center gap-3 w-full sm:w-auto">
-                <button 
-                  onClick={() => setSelectedProject(null)}
-                  className="px-4 py-2 text-xs font-medium text-gray-600 hover:text-textMain border border-gray-300 rounded-lg bg-white hover:bg-gray-100 transition-colors w-full sm:w-auto cursor-pointer"
-                >
-                  Close
-                </button>
-                <a 
-                  href={selectedProject.link}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center justify-center gap-2 bg-textMain text-white px-5 py-2 rounded-lg text-xs font-semibold hover:bg-accent transition-colors w-full sm:w-auto cursor-pointer"
-                >
-                  <FileText size={16} />
-                  <span>Open Full PDF Document</span>
-                  <ExternalLink size={14} />
-                </a>
-              </div>
+            {/* Modal Footer */}
+            <div className="p-6 border-t border-gray-200 bg-gray-50 rounded-b-2xl flex items-center justify-end">
+              <button 
+                onClick={() => setSelectedProject(null)}
+                className="px-6 py-2.5 text-xs font-bold text-white bg-textMain hover:bg-accent rounded-lg transition-colors cursor-pointer"
+              >
+                Close Case Study
+              </button>
             </div>
           </div>
         </div>
