@@ -17,6 +17,7 @@ export default function Navbar() {
     { name: 'Work', href: '#work' },
     { name: 'Featured', href: '#products' },
     { name: 'Portfolio', href: '#portfolio' },
+    { name: 'Leadership Engagement', href: '#leadership-engagement' },
     { name: 'Tools', href: '#tools' },
     { name: 'Experience', href: '#experience' },
     { name: 'About', href: '#about' },
@@ -35,12 +36,12 @@ export default function Navbar() {
           </a>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex gap-8">
+          <nav className="hidden md:flex gap-6">
             {navLinks.map((link) => (
               <a 
                 key={link.name} 
                 href={link.href}
-                className="text-sm font-medium text-muted hover:text-accent transition-colors"
+                className="text-xs font-medium text-muted hover:text-accent transition-colors"
               >
                 {link.name}
               </a>

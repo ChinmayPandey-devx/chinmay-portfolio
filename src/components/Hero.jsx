@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, Download } from 'lucide-react';
+import { ArrowRight, Download, Award } from 'lucide-react';
 
-const headlines = [
-  "Building AI Products.",
-  "Solving User Problems.",
-  "Driving Product Decisions."
+const animatedPhrases = [
+  "From founders to VPs to CPOs",
+  "Product leaders at MediBuddy, Delhivery, Leap, Unstop & Nykaa",
+  "Engaged with work I built before anyone asked me to."
 ];
 
 export default function Hero() {
@@ -13,45 +13,68 @@ export default function Hero() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % headlines.length);
-    }, 3000);
+      setIndex((prev) => (prev + 1) % animatedPhrases.length);
+    }, 3500);
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <section id="work" className="pt-32 pb-section px-6 lg:px-8 max-w-6xl mx-auto min-h-[90vh] flex items-center">
+    <section id="work" className="pt-28 md:pt-32 pb-section px-6 lg:px-8 max-w-6xl mx-auto min-h-[85vh] flex items-center">
       <div className="flex flex-col-reverse md:flex-row items-center justify-between w-full gap-12">
         {/* Left Side: Content */}
         <div className="flex-1 text-center md:text-left">
-          <span className="font-mono text-sm font-medium text-accent uppercase tracking-wider mb-4 block">
-            Product Management Intern
+          {/* Credibility Badge */}
+          <motion.a 
+            href="#leadership-engagement"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center gap-2 bg-indigo-50/80 border border-indigo-100 text-accent px-3.5 py-1.5 rounded-full text-xs font-bold hover:bg-accent hover:text-white transition-all duration-200 mb-5 cursor-pointer shadow-xs"
+          >
+            <Award size={14} />
+            <span>Validated by VPs, CPOs & Founders</span>
+          </motion.a>
+
+          <span className="font-mono text-xs md:text-sm font-semibold text-muted uppercase tracking-wider mb-2 block">
+            Product Management Intern · 0→1 Builder
           </span>
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 text-balance h-auto min-h-[140px] md:min-h-[160px]">
-            <span className="block mb-2">Chinmay Pandey</span>
-            <div className="relative h-[1.2em] overflow-hidden text-3xl md:text-4xl lg:text-5xl text-gray-400">
+
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-6 text-balance">
+            <span className="block mb-2 text-textMain">Chinmay Pandey</span>
+          </h1>
+
+          {/* Animated Headline Statement */}
+          <div className="mb-8 max-w-2xl bg-white/80 p-5 rounded-2xl border border-gray-200 shadow-sm text-left">
+            <p className="text-lg md:text-xl font-bold text-gray-900 leading-snug mb-3">
+              "From founders to VPs to CPOs — product leaders at MediBuddy, Delhivery, Leap, Unstop, and Nykaa have engaged with work I built before anyone asked me to."
+            </p>
+
+            <div className="relative h-7 overflow-hidden border-t border-gray-100 pt-2 text-xs md:text-sm font-semibold text-accent flex items-center">
               <AnimatePresence mode="wait">
                 <motion.span
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 15 }}
                   animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.5 }}
-                  className="absolute left-0 md:left-0 right-0"
+                  exit={{ opacity: 0, y: -15 }}
+                  transition={{ duration: 0.4 }}
+                  className="absolute left-0"
                 >
-                  {headlines[index]}
+                  ⚡ {animatedPhrases[index]}
                 </motion.span>
               </AnimatePresence>
             </div>
-          </h1>
-          <p className="text-xl md:text-2xl text-muted italic mb-10 text-balance max-w-2xl leading-relaxed">
+          </div>
+
+          <p className="text-base md:text-lg text-muted italic mb-8 max-w-2xl leading-relaxed">
             "Engineering taught me how to build; product management taught me what to build."
           </p>
+
           <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
             <a 
-              href="#portfolio"
+              href="#leadership-engagement"
               className="flex items-center gap-2 bg-textMain text-white px-6 py-3 rounded-lg font-medium hover:bg-accent transition-colors w-full sm:w-auto justify-center"
             >
-              View Portfolio <ArrowRight size={18} />
+              Leadership Engagement <ArrowRight size={18} />
             </a>
             <a 
               href="/chinmay-portfolio/assets/resume.pdf"
@@ -65,7 +88,7 @@ export default function Hero() {
         </div>
 
         {/* Right Side: Photo */}
-        <div className="w-48 h-48 md:w-80 md:h-80 flex-shrink-0">
+        <div className="w-44 h-44 sm:w-56 sm:h-56 md:w-80 md:h-80 flex-shrink-0">
           <motion.div 
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}

@@ -3,6 +3,7 @@ import Hero from './components/Hero';
 import Stats from './components/Stats';
 import FeaturedProducts from './components/FeaturedProducts';
 import Portfolio from './components/Portfolio';
+import Pitches from './components/Pitches';
 import Tools from './components/Tools';
 import Experience from './components/Experience';
 import About from './components/About';
@@ -17,6 +18,7 @@ function App() {
         <Stats />
         <FeaturedProducts />
         <Portfolio />
+        <Pitches showLogos={true} />
         <Tools />
         <Experience />
         <About />
