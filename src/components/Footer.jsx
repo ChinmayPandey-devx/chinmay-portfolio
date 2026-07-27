@@ -1,4 +1,4 @@
-import { Mail, Globe, Code, FileText } from 'lucide-react';
+import { Mail, Globe, Code, FileText, Sparkles } from 'lucide-react';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -8,22 +8,20 @@ export default function Footer() {
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-4xl font-bold tracking-tight mb-4">Let's build something great.</h2>
         <p className="text-lg text-muted mb-12 text-balance max-w-2xl mx-auto">
-          Open to PM internships and full-time roles. Currently available from August 2025 — let's talk.
+          Open to PM internships and full-time roles. Currently available — let's talk.
         </p>
 
-        <div className="flex flex-wrap justify-center gap-6 md:gap-10 mb-16">
-          {/* // TODO: replace placeholder with actual email */}
+        <div className="flex flex-wrap justify-center gap-6 md:gap-10 mb-12">
           <a 
-            href="mailto:PLACEHOLDER_EMAIL" 
+            href="mailto:chinmay.pandey.work@gmail.com" 
             className="flex items-center gap-2 text-textMain font-medium hover:text-accent transition-colors"
           >
             <Mail size={20} />
             <span>Email</span>
           </a>
 
-          {/* // TODO: replace placeholder with actual linkedin */}
           <a 
-            href="https://linkedin.com/in/PLACEHOLDER" 
+            href="https://linkedin.com/in/chinmaypandey" 
             target="_blank"
             rel="noreferrer"
             className="flex items-center gap-2 text-textMain font-medium hover:text-accent transition-colors"
@@ -32,7 +30,6 @@ export default function Footer() {
             <span>LinkedIn</span>
           </a>
 
-          {/* // TODO: update if needed */}
           <a 
             href="https://github.com/chinmaypandey-devx" 
             target="_blank"
@@ -43,7 +40,6 @@ export default function Footer() {
             <span>GitHub</span>
           </a>
 
-          {/* // TODO: make sure resume.pdf is in public/assets */}
           <a 
             href="/chinmay-portfolio/assets/resume.pdf" 
             target="_blank"
@@ -53,6 +49,12 @@ export default function Footer() {
             <FileText size={20} />
             <span>Resume</span>
           </a>
+        </div>
+
+        {/* GitHub & Prototype Build Note */}
+        <div className="inline-flex items-center gap-2 bg-indigo-50/60 border border-indigo-100 text-gray-700 px-4 py-2.5 rounded-full text-xs sm:text-sm font-medium mb-12">
+          <Sparkles size={16} className="text-accent flex-shrink-0" />
+          <span>AI-based prototypes built using <strong>Antigravity</strong>, <strong>Claude</strong>, <strong>Codex</strong>, and <strong>Figma</strong>.</span>
         </div>
 
         <div className="text-sm text-gray-400 font-medium">

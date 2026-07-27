@@ -16,6 +16,7 @@ export default function Navbar() {
   const navLinks = [
     { name: 'Work', href: '#work' },
     { name: 'Portfolio', href: '#portfolio' },
+    { name: 'Tools', href: '#tools' },
     { name: 'Experience', href: '#experience' },
     { name: 'About', href: '#about' },
   ];
@@ -47,7 +48,7 @@ export default function Navbar() {
 
           {/* Mobile Menu Button */}
           <button 
-            className="md:hidden p-2 text-textMain"
+            className="md:hidden p-2 text-textMain cursor-pointer"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}

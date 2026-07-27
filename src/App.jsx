@@ -2,6 +2,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Stats from './components/Stats';
 import Portfolio from './components/Portfolio';
+import Tools from './components/Tools';
 import Experience from './components/Experience';
 import About from './components/About';
 import Footer from './components/Footer';
@@ -14,6 +15,7 @@ function App() {
         <Hero />
         <Stats />
         <Portfolio />
+        <Tools />
         <Experience />
         <About />
       </main>

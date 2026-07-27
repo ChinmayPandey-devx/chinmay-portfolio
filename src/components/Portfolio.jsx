@@ -4,12 +4,9 @@ import { projects } from '../data/projects';
 
 const filters = [
   'All',
-  'Product Teardowns',
   'Product Design',
-  'PRDs',
   'RCAs',
-  'Guesstimates',
-  'Growth Experiments'
+  'Guesstimates'
 ];
 
 export default function Portfolio() {
@@ -29,10 +26,10 @@ export default function Portfolio() {
           <button
             key={filter}
             onClick={() => setActiveFilter(filter)}
-            className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+            className={`px-4 py-2 rounded-full text-sm font-medium transition-colors cursor-pointer ${
               activeFilter === filter 
                 ? 'bg-accent text-white' 
-                : 'bg-transparent text-muted hover:bg-gray-200'
+                : 'bg-white text-muted border border-gray-200 hover:bg-gray-100 hover:text-textMain'
             }`}
           >
             {filter}
@@ -48,8 +45,8 @@ export default function Portfolio() {
             className="group bg-card rounded-lg overflow-hidden shadow-card border border-gray-100 hover:-translate-y-1 transition-transform duration-200 flex flex-col h-full"
           >
             {/* Thumbnail */}
-            <div className={`h-48 w-full bg-gradient-to-br ${project.gradient} p-6 flex flex-col justify-end`}>
-              <span className="bg-white/20 backdrop-blur-sm text-white text-xs font-semibold px-2 py-1 rounded w-max mb-2">
+            <div className={`h-48 w-full bg-gradient-to-br ${project.gradient} p-6 flex flex-col justify-end relative`}>
+              <span className="bg-white/20 backdrop-blur-sm text-white text-xs font-semibold px-2.5 py-1 rounded w-max mb-2">
                 {project.category}
               </span>
             </div>
@@ -62,12 +59,13 @@ export default function Portfolio() {
                   href={project.link} 
                   target="_blank" 
                   rel="noreferrer"
-                  className="text-muted hover:text-accent flex-shrink-0"
+                  title="View Document"
+                  className="text-muted hover:text-accent flex-shrink-0 p-1 rounded hover:bg-gray-100 transition-colors"
                 >
                   <ExternalLink size={20} />
                 </a>
               </div>
-              <p className="text-muted text-sm mb-6 flex-1">
+              <p className="text-muted text-sm mb-6 flex-1 leading-relaxed">
                 {project.description}
               </p>
               
@@ -76,7 +74,7 @@ export default function Portfolio() {
                 {project.tools.map((tool, i) => (
                   <span 
                     key={i}
-                    className="text-xs font-medium bg-gray-100 text-gray-600 px-2 py-1 rounded-md"
+                    className="text-xs font-medium bg-gray-100 text-gray-600 px-2.5 py-1 rounded-md"
                   >
                     {tool}
                   </span>
