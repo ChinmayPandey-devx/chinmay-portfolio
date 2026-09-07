@@ -41,7 +41,7 @@ export default function Footer() {
           </a>
 
           <a 
-            href="/chinmay-portfolio/assets/resume.pdf" 
+            href="https://drive.google.com/file/d/1kbarcKrs1S8VzsdSAZM1I4b-duYUOLpO/view?usp=sharing" 
             target="_blank"
             rel="noreferrer"
             className="flex items-center gap-2 text-textMain font-medium hover:text-accent transition-colors"

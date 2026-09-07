@@ -19,8 +19,15 @@ export default function Experience() {
                 </span>
               </div>
               
-              <div className="text-base font-semibold text-gray-700 mb-4">
-                {exp.company}
+              <div className="flex items-center gap-3 text-base font-semibold text-gray-700 mb-4">
+                {exp.logo && (
+                  <img 
+                    src={exp.logo} 
+                    alt={`${exp.company} logo`} 
+                    className="w-7 h-7 object-contain rounded bg-white p-0.5 border border-gray-200"
+                  />
+                )}
+                <span>{exp.company}</span>
               </div>
               
               <ul className="list-disc pl-5 space-y-2 text-muted">

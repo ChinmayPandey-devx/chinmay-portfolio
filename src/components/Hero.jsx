@@ -66,7 +66,7 @@ export default function Hero() {
           </div>
 
           <p className="text-base md:text-lg text-muted italic mb-8 max-w-2xl leading-relaxed">
-            "Engineering taught me how to build; product management taught me what to build."
+            "Curiosity charges interest. I've paid in weekends, sleep, and ideas nobody wanted to fund — and I'd pay it again."
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
@@ -77,7 +77,7 @@ export default function Hero() {
               Leadership Engagement <ArrowRight size={18} />
             </a>
             <a 
-              href="/chinmay-portfolio/assets/resume.pdf"
+              href="https://drive.google.com/file/d/1kbarcKrs1S8VzsdSAZM1I4b-duYUOLpO/view?usp=sharing"
               target="_blank"
               rel="noreferrer"
               className="flex items-center gap-2 bg-transparent border border-gray-300 text-textMain px-6 py-3 rounded-lg font-medium hover:border-accent hover:text-accent transition-colors w-full sm:w-auto justify-center"
