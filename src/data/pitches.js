@@ -57,15 +57,5 @@ export const pitches = [
     description: "Product pitch and campus engagement strategy discussed with Ankit Agarwal.",
     pitchDeck: null,
     prototypes: []
-  },
-  {
-    id: "gfg",
-    company: "GeeksforGeeks",
-    logoDomain: "geeksforgeeks.org",
-    leader: "Product Leadership",
-    leaderTitle: "GeeksforGeeks Team",
-    description: "Unsolicited product teardown and feature recommendations prepared for GeeksforGeeks leadership.",
-    pitchDeck: null,
-    prototypes: []
   }
 ];
