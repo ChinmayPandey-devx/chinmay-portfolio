@@ -32,11 +32,11 @@ export default function Hero() {
             className="inline-flex items-center gap-2 bg-indigo-50/80 border border-indigo-100 text-accent px-3.5 py-1.5 rounded-full text-xs font-bold hover:bg-accent hover:text-white transition-all duration-200 mb-5 cursor-pointer shadow-xs"
           >
             <Award size={14} />
-            <span>Validated by VPs, CPOs & Founders</span>
+            <span>Reached VPs, CPOs & Founders — unprompted</span>
           </motion.a>
 
           <span className="font-mono text-xs md:text-sm font-semibold text-muted uppercase tracking-wider mb-2 block">
-            Product Management Intern · 0→1 Builder
+            STILL THINKING · ALREADY BUILDING
           </span>
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-6 text-balance">
@@ -46,7 +46,7 @@ export default function Hero() {
           {/* Animated Headline Statement */}
           <div className="mb-8 max-w-2xl bg-white/80 p-5 rounded-2xl border border-gray-200 shadow-sm text-left">
             <p className="text-lg md:text-xl font-bold text-gray-900 leading-snug mb-3">
-              "From founders to VPs to CPOs — product leaders at MediBuddy, Delhivery, Leap, Unstop, and Nykaa have engaged with work I built before anyone asked me to."
+              "From the leaders I've actually interacted with — the good ones didn't open with 'what's the impact.' They opened with 'what's the thinking,' and let the impact question wait its turn."
             </p>
 
             <div className="relative h-7 overflow-hidden border-t border-gray-100 pt-2 text-xs md:text-sm font-semibold text-accent flex items-center">
@@ -66,7 +66,7 @@ export default function Hero() {
           </div>
 
           <p className="text-base md:text-lg text-muted italic mb-8 max-w-2xl leading-relaxed">
-            "From the leaders I've actually interacted with — the good ones didn't open with 'what's the impact.' They opened with 'what's the thinking,' and let the impact question wait its turn."
+            "Engineering taught me how to build; product management taught me what to build."
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
