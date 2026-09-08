@@ -1,6 +1,5 @@
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import Stats from './components/Stats';
 import Portfolio from './components/Portfolio';
 import Pitches from './components/Pitches';
 import Tools from './components/Tools';
@@ -14,7 +13,6 @@ function App() {
       <Navbar />
       <main>
         <Hero />
-        <Stats />
         <Portfolio />
         <Pitches showLogos={true} />
         <Tools />
