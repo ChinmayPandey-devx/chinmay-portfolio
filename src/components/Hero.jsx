@@ -66,7 +66,7 @@ export default function Hero() {
           </div>
 
           <p className="text-base md:text-lg text-muted italic mb-8 max-w-2xl leading-relaxed">
-            "Curiosity charges interest. I've paid in weekends, sleep, and ideas nobody wanted to fund — and I'd pay it again."
+            "From the leaders I've actually interacted with — the good ones didn't open with 'what's the impact.' They opened with 'what's the thinking,' and let the impact question wait its turn."
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
