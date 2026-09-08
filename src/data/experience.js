@@ -2,8 +2,8 @@ export const experiences = [
   {
     company: "Delhivery",
     role: "Product Management Intern",
-    duration: "May 2024 – Present",
-    logo: "/chinmay-portfolio/assets/delhivery.png",
+    duration: "July 2024 – Present",
+    logoDomain: "delhivery.com",
     bullets: [
       "Driving 0→1 product initiatives and feature optimizations for logistics and supply chain operations.",
       "Writing detailed PRDs, mapping user workflows, and analyzing operational metrics to improve efficiency.",

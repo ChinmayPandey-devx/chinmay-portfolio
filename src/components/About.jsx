@@ -1,5 +1,3 @@
-import { Award } from 'lucide-react';
-
 const skills = [
   "Product Strategy",
   "User Research",
@@ -11,11 +9,6 @@ const skills = [
   "Stakeholder Management",
   "AI/ML Fundamentals",
   "0→1 Development"
-];
-
-const certs = [
-  "Google PM Certificate",
-  "Meta Data Analyst Certificate"
 ];
 
 export default function About() {
@@ -34,9 +27,9 @@ export default function About() {
           </p>
         </div>
 
-        {/* Skills & Certs */}
+        {/* Skills */}
         <div>
-          <div className="mb-10">
+          <div>
             <h3 className="text-xl font-bold text-textMain mb-6 flex items-center gap-2">
               Toolkit
             </h3>
@@ -48,22 +41,6 @@ export default function About() {
                 >
                   {skill}
                 </span>
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <h3 className="text-xl font-bold text-textMain mb-6 flex items-center gap-2">
-              Certifications
-            </h3>
-            <div className="space-y-4">
-              {certs.map((cert, idx) => (
-                <div key={idx} className="flex items-center gap-4 bg-white border border-gray-200 p-4 rounded-lg shadow-sm">
-                  <div className="bg-indigo-50 text-accent p-2 rounded-full">
-                    <Award size={20} />
-                  </div>
-                  <span className="font-medium text-textMain">{cert}</span>
-                </div>
               ))}
             </div>
           </div>
