@@ -2,7 +2,6 @@ import { motion } from 'framer-motion';
 
 const stats = [
   { value: '15+', label: 'User Interviews Conducted' },
-  { value: '2', label: 'AI Products Built & Shipped' },
   { value: '4', label: 'Product & Leadership Roles' },
   { value: '20+', label: 'Product Case Studies' }
 ];
@@ -25,7 +24,7 @@ export default function Stats() {
     <section className="bg-[#EEF2FF] py-16 px-6 lg:px-8 border-y border-indigo-100">
       <div className="max-w-6xl mx-auto">
         <motion.div 
-          className="grid grid-cols-2 md:grid-cols-4 gap-8"
+          className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"

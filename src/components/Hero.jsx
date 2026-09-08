@@ -4,7 +4,7 @@ import { ArrowRight, Download, Award } from 'lucide-react';
 
 const animatedPhrases = [
   "From founders to VPs to CPOs",
-  "Product leaders at MediBuddy, Delhivery, Leap, Unstop & Nykaa",
+  "Product leaders at MediBuddy, Delhivery, Leap & Unstop",
   "Engaged with work I built before anyone asked me to."
 ];
 

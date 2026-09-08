@@ -39,16 +39,6 @@ export const pitches = [
     ]
   },
   {
-    id: "naukri",
-    company: "Naukri.com",
-    logoDomain: "naukri.com",
-    leader: "Jatin Thukral",
-    leaderTitle: "Chief Product Officer, Naukri.com",
-    description: "Presented product ideas and candidate-recruiter engagement concepts to Jatin Thukral (Chief Product Officer, Naukri.com).",
-    pitchDeck: null,
-    prototypes: []
-  },
-  {
     id: "pw",
     company: "Physics Wallah",
     logoDomain: "pw.live",
