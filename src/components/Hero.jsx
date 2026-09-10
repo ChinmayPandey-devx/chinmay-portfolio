@@ -26,9 +26,8 @@ export default function Hero() {
           {/* Credibility Badge */}
           <motion.a 
             href="#leadership-engagement"
-            initial={{ opacity: 0, y: -10 }}
+            initial={false}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
             className="inline-flex items-center gap-2 bg-indigo-50/80 border border-indigo-100 text-accent px-3.5 py-1.5 rounded-full text-xs font-bold hover:bg-accent hover:text-white transition-all duration-200 mb-5 cursor-pointer shadow-xs"
           >
             <Award size={14} />
@@ -50,7 +49,7 @@ export default function Hero() {
             </p>
 
             <div className="relative h-7 overflow-hidden border-t border-gray-100 pt-2 text-xs md:text-sm font-semibold text-accent flex items-center">
-              <AnimatePresence mode="wait">
+              <AnimatePresence initial={false} mode="wait">
                 <motion.span
                   key={index}
                   initial={{ opacity: 0, y: 15 }}
@@ -90,9 +89,8 @@ export default function Hero() {
         {/* Right Side: Photo */}
         <div className="w-44 h-44 sm:w-56 sm:h-56 md:w-80 md:h-80 flex-shrink-0">
           <motion.div 
-            initial={{ opacity: 0, scale: 0.9 }}
+            initial={false}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6 }}
             className="w-full h-full rounded-full overflow-hidden border-4 border-white shadow-card relative"
           >
             <img 
