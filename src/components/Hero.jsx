@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Download, Award } from 'lucide-react';
+import ResumeModal from './ResumeModal';
 
 const animatedPhrases = [
   "From founders to VPs to CPOs",
@@ -10,6 +11,7 @@ const animatedPhrases = [
 
 export default function Hero() {
   const [index, setIndex] = useState(0);
+  const [isResumeModalOpen, setIsResumeModalOpen] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -75,14 +77,12 @@ export default function Hero() {
             >
               Leadership Engagement <ArrowRight size={18} />
             </a>
-            <a 
-              href="https://drive.google.com/file/d/1kbarcKrs1S8VzsdSAZM1I4b-duYUOLpO/view?usp=sharing"
-              target="_blank"
-              rel="noreferrer"
-              className="flex items-center gap-2 bg-transparent border border-gray-300 text-textMain px-6 py-3 rounded-lg font-medium hover:border-accent hover:text-accent transition-colors w-full sm:w-auto justify-center"
+            <button 
+              onClick={() => setIsResumeModalOpen(true)}
+              className="flex items-center gap-2 bg-transparent border border-gray-300 text-textMain px-6 py-3 rounded-lg font-medium hover:border-accent hover:text-accent transition-colors w-full sm:w-auto justify-center cursor-pointer"
             >
               Download Resume <Download size={18} />
-            </a>
+            </button>
           </div>
         </div>
 
@@ -101,6 +101,11 @@ export default function Hero() {
           </motion.div>
         </div>
       </div>
+
+      <ResumeModal 
+        isOpen={isResumeModalOpen} 
+        onClose={() => setIsResumeModalOpen(false)} 
+      />
     </section>
   );
 }

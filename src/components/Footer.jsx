@@ -1,7 +1,10 @@
+import { useState } from 'react';
 import { Mail, Globe, Code, FileText } from 'lucide-react';
+import ResumeModal from './ResumeModal';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const [isResumeModalOpen, setIsResumeModalOpen] = useState(false);
 
   return (
     <footer id="contact" className="bg-white border-t border-gray-200 py-20 px-6 lg:px-8">
@@ -40,21 +43,24 @@ export default function Footer() {
             <span>GitHub</span>
           </a>
 
-          <a 
-            href="https://drive.google.com/file/d/1kbarcKrs1S8VzsdSAZM1I4b-duYUOLpO/view?usp=sharing" 
-            target="_blank"
-            rel="noreferrer"
-            className="flex items-center gap-2 text-textMain font-medium hover:text-accent transition-colors"
+          <button 
+            onClick={() => setIsResumeModalOpen(true)}
+            className="flex items-center gap-2 text-textMain font-medium hover:text-accent transition-colors cursor-pointer bg-transparent border-none"
           >
             <FileText size={20} />
             <span>Resume</span>
-          </a>
+          </button>
         </div>
 
         <div className="text-sm text-gray-400 font-medium">
           &copy; {currentYear > 2026 ? currentYear : 2026} Chinmay Pandey
         </div>
       </div>
+
+      <ResumeModal 
+        isOpen={isResumeModalOpen} 
+        onClose={() => setIsResumeModalOpen(false)} 
+      />
     </footer>
   );
 }
