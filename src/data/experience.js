@@ -2,7 +2,7 @@ export const experiences = [
   {
     company: "Delhivery",
     role: "Product Management Intern",
-    duration: "July 2024 – Present",
+    duration: "July 2026 – Present",
     logoDomain: "delhivery.com",
     bullets: [
       "Driving 0→1 product initiatives and feature optimizations for logistics and supply chain operations.",
