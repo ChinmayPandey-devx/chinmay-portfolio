@@ -38,11 +38,10 @@ export default function Pitches({ showLogos = false }) {
                     {showLogos && (
                       <div className="w-10 h-10 rounded-xl bg-gray-50 p-1.5 border border-gray-200 flex items-center justify-center flex-shrink-0">
                         <img 
-                          src={`https://logo.clearbit.com/${pitch.logoDomain}`}
+                          src={`https://www.google.com/s2/favicons?domain=${pitch.logoDomain}&sz=128`}
                           alt={`${pitch.company} logo`}
                           onError={(e) => {
-                            e.currentTarget.onerror = null;
-                            e.currentTarget.src = `https://www.google.com/s2/favicons?domain=${pitch.logoDomain}&sz=128`;
+                            e.currentTarget.style.display = 'none';
                           }}
                           className="w-full h-full object-contain"
                         />

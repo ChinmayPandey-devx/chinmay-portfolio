@@ -67,11 +67,10 @@ export default function Portfolio() {
               {/* Company Logo Badge */}
               <div className="flex items-center gap-2 bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-xl shadow-sm border border-white/20">
                 <img 
-                  src={`https://logo.clearbit.com/${project.logoDomain}`}
+                  src={`https://www.google.com/s2/favicons?domain=${project.logoDomain}&sz=128`}
                   alt={`${project.company} logo`}
                   onError={(e) => {
-                    e.currentTarget.onerror = null;
-                    e.currentTarget.src = `https://www.google.com/s2/favicons?domain=${project.logoDomain}&sz=128`;
+                    e.currentTarget.style.display = 'none';
                   }}
                   className="w-5 h-5 object-contain rounded-sm"
                 />
@@ -166,11 +165,10 @@ export default function Portfolio() {
               <div className="flex items-center gap-3 mb-3">
                 <div className="bg-white px-3 py-1.5 rounded-xl shadow-sm flex items-center gap-2">
                   <img 
-                    src={`https://logo.clearbit.com/${selectedProject.logoDomain}`}
+                    src={`https://www.google.com/s2/favicons?domain=${selectedProject.logoDomain}&sz=128`}
                     alt={`${selectedProject.company} logo`}
                     onError={(e) => {
-                      e.currentTarget.onerror = null;
-                      e.currentTarget.src = `https://www.google.com/s2/favicons?domain=${selectedProject.logoDomain}&sz=128`;
+                      e.currentTarget.style.display = 'none';
                     }}
                     className="w-5 h-5 object-contain"
                   />

@@ -22,11 +22,10 @@ export default function Experience() {
               <div className="flex items-center gap-3 text-base font-semibold text-gray-700 mb-4">
                 {exp.logoDomain ? (
                   <img 
-                    src={`https://logo.clearbit.com/${exp.logoDomain}`}
+                    src={`https://www.google.com/s2/favicons?domain=${exp.logoDomain}&sz=128`}
                     alt={`${exp.company} logo`} 
                     onError={(e) => {
-                      e.currentTarget.onerror = null;
-                      e.currentTarget.src = `https://www.google.com/s2/favicons?domain=${exp.logoDomain}&sz=128`;
+                      e.currentTarget.style.display = 'none';
                     }}
                     className="w-7 h-7 object-contain rounded bg-white p-0.5 border border-gray-200"
                   />
