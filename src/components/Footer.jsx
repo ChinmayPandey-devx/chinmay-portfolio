@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Mail, Globe, Code, FileText } from 'lucide-react';
+import { Mail, Globe, Code, FileText, MessageSquare } from 'lucide-react';
 import ResumeModal from './ResumeModal';
 
 export default function Footer() {
@@ -47,8 +47,8 @@ export default function Footer() {
             onClick={() => setIsResumeModalOpen(true)}
             className="flex items-center gap-2 text-textMain font-medium hover:text-accent transition-colors cursor-pointer bg-transparent border-none"
           >
-            <FileText size={20} />
-            <span>Resume</span>
+            <MessageSquare size={20} />
+            <span>Connect</span>
           </button>
         </div>
 

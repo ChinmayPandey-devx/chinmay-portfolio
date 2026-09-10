@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, Download, Award } from 'lucide-react';
+import { ArrowRight, Download, Award, MessageSquare } from 'lucide-react';
 import ResumeModal from './ResumeModal';
 
 const animatedPhrases = [
@@ -81,7 +81,7 @@ export default function Hero() {
               onClick={() => setIsResumeModalOpen(true)}
               className="flex items-center gap-2 bg-transparent border border-gray-300 text-textMain px-6 py-3 rounded-lg font-medium hover:border-accent hover:text-accent transition-colors w-full sm:w-auto justify-center cursor-pointer"
             >
-              Download Resume <Download size={18} />
+              Let's Connect <MessageSquare size={18} />
             </button>
           </div>
         </div>

@@ -138,17 +138,14 @@ export default function ResumeModal({
               )}
             </div>
 
-            {/* Secondary Option: Proceed to Download PDF */}
+            {/* Direct Send Email Link */}
             <div className="pt-4 border-t border-gray-100 flex items-center justify-between gap-4">
-              <span className="text-xs text-gray-500 font-medium">Still need the PDF file?</span>
+              <span className="text-xs text-gray-500 font-medium">Prefer opening your email client?</span>
               <a
-                href={resumeUrl}
-                target="_blank"
-                rel="noreferrer"
-                onClick={onClose}
+                href={`mailto:${email}`}
                 className="inline-flex items-center gap-1.5 text-xs font-bold text-accent hover:text-indigo-700 transition-colors"
               >
-                <span>Download Resume PDF</span>
+                <span>Send Email directly</span>
                 <ExternalLink size={14} />
               </a>
             </div>
